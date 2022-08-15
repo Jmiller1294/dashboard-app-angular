@@ -1,0 +1,49 @@
+.app-cont {
+  height: 1200px;
+}
+
+.row {
+  display: flex;
+  flex-flow: row;
+  flex: 1;
+}
+
+.column {
+  height: auto;
+  background-color: green;
+  flex-flow: column;
+  flex: 1;
+}
+
+.two {
+  flex: 2;
+}
+
+.three {
+  flex: 3;
+}
+
+.four {
+  flex: 4;
+}
+
+.sidebar-container {
+  height: auto;
+  background-color: green;
+  flex-direction: column;
+  flex: 1;
+}
+
+.home-container {
+  height: auto;
+  background-color: orange;
+  flex-direction: column;
+  flex: 21;
+}
+
+.news-container {
+  height: auto;
+  background-color: orange;
+  flex-direction: column;
+  flex: 8;
+}

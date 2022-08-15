@@ -1,0 +1,32 @@
+.grid {
+  padding: 20px;
+}
+
+.row {
+  height: auto;
+  flex-direction: row;
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  background-color: green;
+  flex-direction: column;
+  flex: 1;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.two {
+  flex: 2;
+}
+
+.three {
+  flex: 3;
+}
+
+.four {
+  flex: 4;
+}
