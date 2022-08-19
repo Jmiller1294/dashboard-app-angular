@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'calender-widget',
+  selector: 'stock-widget',
   template: `
     <div [ngStyle]=" {'height': '250px', 'background-color': 'purple', 'margin-bottom': '20px'}">
-      calender-widget
+      stock-widget
     </div>
   `,
 })
-export class CalenderWidgetComponent implements OnInit {
+export class StockWidgetComponent implements OnInit {
 
   constructor() { }
 

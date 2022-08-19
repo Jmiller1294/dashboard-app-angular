@@ -1,9 +1,11 @@
-* {
-  background-color: plum;
-}
-
 .tasks-container {
-  height: 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: purple;
+  height: 470px;
+  margin-bottom: 20px;
+  padding: 25px;
+  border-radius: 20px;
 }
 
 .calender-container {

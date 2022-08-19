@@ -1,5 +1,5 @@
 .app-cont {
-  height: 1200px;
+  height: 1000px;
 }
 
 .row {
@@ -36,14 +36,13 @@
 
 .home-container {
   height: auto;
-  background-color: orange;
   flex-direction: column;
   flex: 21;
 }
 
 .news-container {
-  height: auto;
+  height: 1000px;
   background-color: orange;
   flex-direction: column;
-  flex: 8;
+  flex: 7;
 }

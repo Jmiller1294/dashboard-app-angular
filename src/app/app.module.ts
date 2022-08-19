@@ -6,10 +6,11 @@ import { HomeComponent } from './home/home.component';
 import { WidgetComponent } from './widget/widget.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { TasksWidgetComponent } from './widget/widgets/tasks-widget.component';
 import { NewsWidgetComponent } from './widget/widgets/news-widget.component';
 import { CalenderWidgetComponent } from './widget/widgets/calender-widget.component';
+import { StockWidgetComponent } from './widget/widgets/stock-widget.component';
+import { WeatherWidgetComponent } from './widget/widgets/weather-widget.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,13 @@ import { CalenderWidgetComponent } from './widget/widgets/calender-widget.compon
     TasksWidgetComponent,
     NewsWidgetComponent,
     CalenderWidgetComponent,
+    StockWidgetComponent,
+    WeatherWidgetComponent,
     NavbarComponent,
     SidebarComponent
   ],
   imports: [
     BrowserModule,
-    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

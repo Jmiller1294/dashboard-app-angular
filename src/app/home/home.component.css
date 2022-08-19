@@ -1,5 +1,7 @@
 .grid {
+  background-color: grey;
   padding: 20px;
+  height: 960px;
 }
 
 .row {
@@ -10,7 +12,6 @@
 }
 
 .column {
-  background-color: green;
   flex-direction: column;
   flex: 1;
 }

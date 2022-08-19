@@ -2,14 +2,14 @@ import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewCont
 import { TasksWidgetComponent } from './widgets/tasks-widget.component';
 import { NewsWidgetComponent } from './widgets/news-widget.component';
 import { CalenderWidgetComponent } from './widgets/calender-widget.component';
+import { WeatherWidgetComponent } from './widgets/weather-widget.component';
+import { StockWidgetComponent } from './widgets/stock-widget.component';
 import { ComponentRef } from '@angular/core';
 
 @Component({
   selector: 'widget',
   template: `
-      <div>
-        <ng-container #widgetContainer></ng-container>
-      </div>
+    <ng-container #widgetContainer></ng-container>
   `,
   styleUrls: ['./widget.component.css']
 })
@@ -33,14 +33,19 @@ export class WidgetComponent implements OnInit {
     switch(type) {
       case 'tasks':
         this.con.createComponent(TasksWidgetComponent);
-        this.classType = 'tasks-container'
-      break;
+        break;
       case 'news':
         this.con.createComponent(NewsWidgetComponent);
-      break;
+        break;
       case 'calender':
         this.con.createComponent(CalenderWidgetComponent);
-      break;
+        break;
+      case 'weather':
+        this.con.createComponent(WeatherWidgetComponent);
+        break;
+      case 'stocks':
+        this.con.createComponent(StockWidgetComponent);
+        break;
       default:
         null
     }
