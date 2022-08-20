@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'news-widget',
   template: `
-    <div [ngStyle]=" {'height': '250px', 'background-color': 'purple', 'margin-bottom': '20px'} ">
+    <div class="news-container">
       news-widget
       adasdadas
       asdasdasdasdasdasd,adadaddasdsadasdasd
@@ -13,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
       sfsdfsdfsdfsdfs
     </div>
   `,
+  styleUrls: ['../widget.component.css'],
 })
 export class NewsWidgetComponent implements OnInit {
 

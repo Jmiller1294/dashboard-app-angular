@@ -3,10 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'weather-widget',
   template: `
-    <div [ngStyle]=" {'height': '250px', 'background-color': 'purple', 'margin-bottom': '20px'}">
+    <div class="weather-container">
       weather-widget
     </div>
   `,
+  styleUrls: ['../widget.component.css'],
 })
 export class WeatherWidgetComponent implements OnInit {
 

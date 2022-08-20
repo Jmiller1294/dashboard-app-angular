@@ -3,10 +3,34 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'stock-widget',
   template: `
-    <div [ngStyle]=" {'height': '250px', 'background-color': 'purple', 'margin-bottom': '20px'}">
-      stock-widget
+    <div class="stock-container">
+     <div class="stock-info">
+      <p>sfgsdgdfsg</p>
+      <p>sfgsdgdfs</p>
+      <p>sfgsdgdfs</p>
+      <p>sfgsdgdf</p>
+     </div>
+     <div class="stock-info">
+      <p>sfgsdgdfsg</p>
+      <p>sfgsdgdfs</p>
+      <p>sfgsdgdfs</p>
+      <p>sfgsdgdf</p>
+     </div>
+     <div class="stock-info">
+      <p>sfgsdgdfsg</p>
+      <p>sfgsdgdfs</p>
+      <p>sfgsdgdfs</p>
+      <p>sfgsdgdf</p>
+     </div>
+     <div class="stock-info">
+      <p>sfgsdgdfsg</p>
+      <p>sfgsdgdfs</p>
+      <p>sfgsdgdfs</p>
+      <p>sfgsdgdf</p>
+     </div>
     </div>
   `,
+  styleUrls: ['../widget.component.css'],
 })
 export class StockWidgetComponent implements OnInit {
 

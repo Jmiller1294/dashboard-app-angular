@@ -3,10 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'calender-widget',
   template: `
-    <div [ngStyle]=" {'height': '250px', 'background-color': 'purple', 'margin-bottom': '20px'}">
+    <div class="calender-container">
       calender-widget
     </div>
   `,
+  styleUrls: ['../widget.component.css'],
 })
 export class CalenderWidgetComponent implements OnInit {
 

@@ -9,15 +9,68 @@
 }
 
 .calender-container {
-  height: 100%;
-  
+  display: flex;
+  width: 173px;
+  flex-direction: column;
+  background-color: purple;
+  height: 200px;
+  margin-bottom: 20px;
+  margin-right: 1px;
+  padding: 25px;
+  border-radius: 20px;
 }
 
 .news-container {
-  height: 100%;
- 
+  display: flex;
+  flex-direction: column;
+  background-color: purple;
+  height: 200px;
+  margin-bottom: 20px;
+  padding: 25px;
+  border-radius: 20px;
 }
 
+.stock-container {
+  display: flex;
+  flex-direction: column;
+  background-color: purple;
+  height: 200px;
+  margin-bottom: 20px;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.stock-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  background-color: purple;
+  height: 200px;
+  margin-bottom: 20px;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.tasks-list {
+  list-style: none;
+}
+
+.tasks-list {
+  margin-top: 25px;
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+.tasks-form {
+  margin-top: 10px;
+  border-radius: 25px;
+}
 
 
 
