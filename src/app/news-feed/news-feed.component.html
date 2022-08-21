@@ -1,0 +1,9 @@
+<div class="news-feed-container">
+  <ng-container  *ngFor="let article of articles">
+    <div class="article-container"> 
+      <img [src]="article.urlToImage" alt="article img"class="article-image"/>
+      <a [href]="article.url" target="_blank">{{article.title}}</a>
+    </div>
+  </ng-container>
+</div>
+

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
+ 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { WidgetComponent } from './widget/widget.component';
@@ -11,6 +12,7 @@ import { NewsWidgetComponent } from './widget/widgets/news-widget.component';
 import { CalenderWidgetComponent } from './widget/widgets/calender-widget.component';
 import { StockWidgetComponent } from './widget/widgets/stock-widget.component';
 import { WeatherWidgetComponent } from './widget/widgets/weather-widget.component';
+import { NewsFeedComponent } from './news-feed/news-feed.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,12 @@ import { WeatherWidgetComponent } from './widget/widgets/weather-widget.componen
     StockWidgetComponent,
     WeatherWidgetComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    NewsFeedComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
