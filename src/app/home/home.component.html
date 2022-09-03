@@ -1,31 +1,33 @@
   <div class="grid">
     <div class="row">
-      <div class="column four">
+      <div class="column two">
         <div class="row">
-          <div class="column two">
-            <widget [type]="'weather'"></widget>
-            <div class="row">
-              <div class="column">
-                <widget [type]="'calender'"></widget>
-              </div>
-              <div class="column two">
-                <widget [type]="'stocks'"></widget>
-              </div>
-            </div>
-            <div class="row">
-              <div class="column">
-                <widget [type]="'news'"></widget>
-              </div>
-              <div class="column">
-                <widget [type]="'news'"></widget>
-              </div>
-            </div>
+          <div class="column">
+            <weather-widget [weatherData]="data"></weather-widget>
           </div>
           <div class="column">
-            <widget [type]="'tasks'"></widget>
-            <widget [type]="'news'"></widget>
+            <widget [type]="'calender'"></widget>
           </div>
         </div>
+        <div class="row">
+          <div class="column">
+            <widget [type]="'stocks'"></widget>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <widget [type]="'tasks'"></widget>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <widget [type]="'weather'"></widget>
+      </div>
+      <div class="column">
+        <widget [type]="'weather'"></widget>
+      </div>
+      <div class="column">
+        <widget [type]="'weather'"></widget>
       </div>
     </div>
   </div>

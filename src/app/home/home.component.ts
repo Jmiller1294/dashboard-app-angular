@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { WidgetComponent } from '../widget/widget.component';
 
 @Component({
@@ -7,6 +7,9 @@ import { WidgetComponent } from '../widget/widget.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  @Input()
+  data: any;
+  console = console;
 
   constructor() { }
 

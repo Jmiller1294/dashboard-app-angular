@@ -10,11 +10,13 @@ import { map, Observable } from 'rxjs';
 export class AppComponent implements OnInit{
   title = 'dashboard';
   loadedArticles: Array<object> = [];
+  loadedWeatherData: any = {};
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.OnFetchArticles();
+    this.onFetchWeatherData();
   }
 
 
@@ -23,9 +25,16 @@ export class AppComponent implements OnInit{
       + '0176803c14204800ae658c2d02a9c37f'
     ) 
     .subscribe(resp => {
-      console.log(resp.articles)
       this.loadedArticles = resp.articles;
     })
-    console.log(this.loadedArticles);
+  }
+
+  onFetchWeatherData() {
+    this.http.get<any>('https://api.openweathermap.org/data/2.5/weather?lat=45&lon=45&appid=' 
+      + '3a3d701928322f6c8b5ad5d274165ef3'
+    )
+    .subscribe(resp => {
+      this.loadedWeatherData = resp;
+    })
   }
 }
