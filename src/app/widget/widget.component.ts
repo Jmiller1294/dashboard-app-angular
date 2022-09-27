@@ -4,7 +4,10 @@ import { NewsWidgetComponent } from './widgets/news-widget.component';
 import { CalenderWidgetComponent } from './widgets/calender-widget.component';
 import { WeatherWidgetComponent } from './widgets/weather-widget.component';
 import { StockWidgetComponent } from './widgets/stock-widget.component';
+import { RandomFactWidgetComponent } from './widgets/random-fact-widget.component';
+import { TechNewsWidgetComponent } from './widgets/tech-news-widget.component';
 import { ComponentRef } from '@angular/core';
+import { BlankWidgetComponent } from './widgets/blank-widget.component';
 
 @Component({
   selector: 'widget',
@@ -46,8 +49,14 @@ export class WidgetComponent implements OnInit {
       case 'stocks':
         this.con.createComponent(StockWidgetComponent);
         break;
+      case 'facts':
+        this.con.createComponent(RandomFactWidgetComponent);
+        break;
+      case 'tech':
+        this.con.createComponent(TechNewsWidgetComponent);
+        break;
       default:
-        null
+        this.con.createComponent(BlankWidgetComponent);
     }
   }
 

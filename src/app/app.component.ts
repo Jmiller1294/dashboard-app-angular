@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
 
 @Component({
@@ -12,11 +12,12 @@ export class AppComponent implements OnInit{
   loadedArticles: Array<object> = [];
   loadedWeatherData: any = {};
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cdRef: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.OnFetchArticles();
     this.onFetchWeatherData();
+    this.cdRef.detectChanges();
   }
 
 

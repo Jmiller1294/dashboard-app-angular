@@ -14,6 +14,9 @@ import { CalenderWidgetComponent } from './widget/widgets/calender-widget.compon
 import { StockWidgetComponent } from './widget/widgets/stock-widget.component';
 import { WeatherWidgetComponent } from './widget/widgets/weather-widget.component';
 import { NewsFeedComponent } from './news-feed/news-feed.component';
+import { RandomFactWidgetComponent } from './widget/widgets/random-fact-widget.component';
+import { TechNewsWidgetComponent } from './widget/widgets/tech-news-widget.component';
+import { BlankWidgetComponent } from './widget/widgets/blank-widget.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +24,16 @@ import { NewsFeedComponent } from './news-feed/news-feed.component';
     HomeComponent,
     WidgetComponent,
     TasksWidgetComponent,
+    TechNewsWidgetComponent,
     NewsWidgetComponent,
     CalenderWidgetComponent,
     StockWidgetComponent,
     WeatherWidgetComponent,
     NavbarComponent,
     SidebarComponent,
-    NewsFeedComponent
+    NewsFeedComponent,
+    RandomFactWidgetComponent,
+    BlankWidgetComponent,
   ],
   imports: [
     BrowserModule,

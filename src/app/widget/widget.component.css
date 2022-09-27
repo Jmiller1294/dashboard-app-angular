@@ -16,9 +16,7 @@
   box-sizing: border-box;
   flex-direction: column;
   background-color: purple;
-  height: 518px;
-  margin-bottom: 20px;
-  margin-left: 5px;
+  height: 520px;
   padding: 15px;
   border-radius: 20px;
 }
@@ -28,7 +26,6 @@
   flex-direction: column;
   background-color: purple;
   height: 200px;
-  margin-bottom: 20px;
   padding: 25px;
   border-radius: 20px;
 }
@@ -45,29 +42,52 @@
 
 .stock-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: space-between;
   background-color: purple;
-  height: 200px;
-  margin-bottom: 20px;
+  height: 250px;
   padding: 25px;
   border-radius: 20px;
 }
 
 .stock-info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 10px;
 }
 
 .weather-container {
   display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  background-color: purple;
+  height: 255px;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.facts-container {
+  display: flex;
   flex-direction: column;
   background-color: purple;
   height: 200px;
-  margin-bottom: 20px;
   padding: 25px;
   border-radius: 20px;
+}
+.blank-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: purple;
+  height: 200px;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.add-widget-button {
+  font-size: 100px;
 }
 
 .tasks-list {
