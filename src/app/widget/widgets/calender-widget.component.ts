@@ -4,7 +4,13 @@ import { Component, OnInit } from '@angular/core';
   selector: 'calender-widget',
   template: `
     <div class="calender-container">
-      calender-widget
+      <div class="row">
+        <div class="column">
+          sdfsdfsdfsdf
+        </div>
+        
+      </div>
+      
     </div>
   `,
   styleUrls: ['../widget.component.css'],
