@@ -17,6 +17,7 @@ import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { RandomFactWidgetComponent } from './widget/widgets/random-fact-widget.component';
 import { TechNewsWidgetComponent } from './widget/widgets/tech-news-widget.component';
 import { BlankWidgetComponent } from './widget/widgets/blank-widget.component';
+import { NewsFeedService } from './news-feed/news-feed.service';
 
 @NgModule({
   declarations: [

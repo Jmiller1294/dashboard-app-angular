@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
+interface news {
+  title: string;
+  description: string;
+}
 
 @Component({
   selector: 'tech-news-widget',
@@ -17,7 +21,9 @@ import { Title } from '@angular/platform-browser';
 })
 export class TechNewsWidgetComponent implements OnInit {
   articleNumber:number = 0;
-  techNews:any = [
+
+  
+  techNews: Array<news> = [
     {
       title: "Hello",
       description: "Good Afternoon this is your news"

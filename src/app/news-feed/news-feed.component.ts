@@ -1,17 +1,30 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { NewsFeedService } from './news-feed.service';
+import { Article } from '../shared/models/article.model';
 
 @Component({
   selector: 'news-feed',
   templateUrl: './news-feed.component.html',
-  styleUrls: ['./news-feed.component.css']
+  styleUrls: ['./news-feed.component.css'],
+  providers: []
 })
-export class NewsFeedComponent implements OnInit {
-  @Input() 
-  articles: Array<any> = []
+export class NewsFeedComponent implements OnInit,AfterViewInit {
+  articles: Array<Article> = [];
+  subscription: Subscription;
+  errorMsg: string;
 
-  constructor() { }
+  constructor(private newsFeedService: NewsFeedService,private cdRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
+    this.newsFeedService.fetchArticles()
+      .subscribe(res => 
+        this.articles = res,
+      )
+  }
+
+  ngAfterViewInit() {
+    
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'stock-widget',
@@ -52,9 +52,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StockWidgetComponent implements OnInit {
 
-  constructor() { }
+  constructor(private elRef: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit(): void {
+    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'blue');
   }
 
 }

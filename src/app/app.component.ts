@@ -15,19 +15,9 @@ export class AppComponent implements OnInit{
   constructor(private http: HttpClient, private cdRef: ChangeDetectorRef) {}
 
   ngOnInit() {
-    this.OnFetchArticles();
-    this.onFetchWeatherData();
-    this.cdRef.detectChanges();
-  }
-
-
-  OnFetchArticles() {
-    this.http.get<{articles: []}>('https://newsapi.org/v2/top-headlines?country=us&apiKey='
-      + '0176803c14204800ae658c2d02a9c37f'
-    ) 
-    .subscribe(resp => {
-      this.loadedArticles = resp.articles;
-    })
+    // this.OnFetchArticles();
+    // this.onFetchWeatherData();
+    //this.cdRef.detectChanges();
   }
 
   onFetchWeatherData() {

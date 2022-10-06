@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'weather-widget',
   template: `
@@ -30,9 +30,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['../widget.component.css'],
 })
 export class WeatherWidgetComponent implements OnInit {
-  @Input()
-  weatherData: any;
+  @Input() weatherData: any;
+  d: string = "hello";
   console = console;
+  // @Output() widgetClicked = new EventEmitter<string>();
 
   constructor() { }
 
@@ -41,7 +42,4 @@ export class WeatherWidgetComponent implements OnInit {
 
   ngAfterViewInit() {
   }
-
-
-
 }

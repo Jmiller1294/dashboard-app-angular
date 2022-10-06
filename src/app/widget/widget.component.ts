@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { TasksWidgetComponent } from './widgets/tasks-widget.component';
 import { NewsWidgetComponent } from './widgets/news-widget.component';
 import { CalenderWidgetComponent } from './widgets/calender-widget.component';
@@ -18,45 +18,46 @@ import { BlankWidgetComponent } from './widgets/blank-widget.component';
 })
 export class WidgetComponent implements OnInit {
   @Input() type: string;
-  @ViewChild('widgetContainer', { read: ViewContainerRef }) con:any;
+  @ViewChild('widgetContainer', { read: ViewContainerRef }) widgetContainer: ViewContainerRef;
   classType: string;
   
+  
 
-  constructor() { }
+  constructor(private cdRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-   
   }
 
   ngAfterViewInit() {
     this.getWidgetType(this.type)
+    this.cdRef.detectChanges();
   }
 
   getWidgetType(type:String) {
     switch(type) {
       case 'tasks':
-        this.con.createComponent(TasksWidgetComponent);
+        this.widgetContainer.createComponent(TasksWidgetComponent);
         break;
       case 'news':
-        this.con.createComponent(NewsWidgetComponent);
+        this.widgetContainer.createComponent(NewsWidgetComponent);
         break;
       case 'calender':
-        this.con.createComponent(CalenderWidgetComponent);
+        this.widgetContainer.createComponent(CalenderWidgetComponent);
         break;
       case 'weather':
-        this.con.createComponent(WeatherWidgetComponent);
+        this.widgetContainer.createComponent(WeatherWidgetComponent);
         break;
       case 'stocks':
-        this.con.createComponent(StockWidgetComponent);
+        this.widgetContainer.createComponent(StockWidgetComponent);
         break;
       case 'facts':
-        this.con.createComponent(RandomFactWidgetComponent);
+        this.widgetContainer.createComponent(RandomFactWidgetComponent);
         break;
       case 'tech':
-        this.con.createComponent(TechNewsWidgetComponent);
+        this.widgetContainer.createComponent(TechNewsWidgetComponent);
         break;
       default:
-        this.con.createComponent(BlankWidgetComponent);
+        this.widgetContainer.createComponent(BlankWidgetComponent);
     }
   }
 
