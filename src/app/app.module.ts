@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
- 
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './features/home/home.component';
 import { WidgetComponent } from './features/widgets/widget.component';
@@ -18,6 +20,7 @@ import { RandomFactWidgetComponent } from './features/widgets/random-fact-widget
 import { TechNewsWidgetComponent } from './features/widgets/tech-news-widget.component';
 import { BlankWidgetComponent } from './features/widgets/blank-widget.component';
 import { NewsFeedService } from './features/news-feed/news-feed.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,11 @@ import { NewsFeedService } from './features/news-feed/news-feed.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

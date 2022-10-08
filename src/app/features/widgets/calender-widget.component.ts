@@ -5,17 +5,16 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <div class="calender-container">
       <div class="row">
-        <div class="column">
-          sdfsdfsdfsdf
-        </div>
-        
+        <mat-card class="demo-inline-calendar-card">
+          <mat-calendar class="calender"[(selected)]="selected"></mat-calendar>
+        </mat-card>   
       </div>
-      
     </div>
   `,
   styleUrls: ['./widget.component.css'],
 })
 export class CalenderWidgetComponent implements OnInit {
+  selected: any;
 
   constructor() { }
 

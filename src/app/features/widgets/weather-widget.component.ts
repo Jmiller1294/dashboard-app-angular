@@ -36,20 +36,20 @@ export enum WeatherIcons {
               ssdfsf
             </div>
             <div class="row">
-              sdfdffff
-              ffffffff
+              sdfdff
+              ffffff
             </div>
           </div>
         </div>
         <div class="column">
           <div class="con">
             <div class="row">
-              sdfdffff
-              ffffffff
+              sdfdff
+              ffffff
             </div>
             <div class="row">
-              sdfdffff
-              ffffffff
+              sdfdff
+              ffffff
             </div>
           </div>
         </div>
