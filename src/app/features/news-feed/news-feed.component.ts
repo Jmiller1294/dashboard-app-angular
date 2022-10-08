@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NewsFeedService } from './news-feed.service';
-import { Article } from '../shared/models/article.model';
+import { Article } from '../../shared/models/article.model';
 
 @Component({
   selector: 'news-feed',

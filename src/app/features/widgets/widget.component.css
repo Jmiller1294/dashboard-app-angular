@@ -17,7 +17,7 @@
   flex-direction: column;
   background-color: purple;
   height: 515px;
-  padding: 15px;
+  padding: 25px;
   border-radius: 20px;
 }
 
@@ -107,8 +107,8 @@
 }
 
 .weather-icon {
-  height: 110px;
-  width: 150px;
+  height: 75px;
+  width: 90px;
 }
 
 .tasks-form {
@@ -121,6 +121,36 @@
   height: 100px;
   border-radius: 5px;
   padding: 2px;
+  margin-bottom: 20px;
+}
+
+.weather-temp {
+  font-size: 52px;
+  line-height: 2;
+}
+
+.border-bottom {
+  border-bottom: 1px solid white;
+}
+
+.con {
+  height: 80px;
+  align-items: center;
+  width: 100px;
+  margin: 0 auto;
+  line-height: 2.5;
+}
+.con-2 {
+  height: 100px;
+  width: 100px;
+}
+
+.con-3 {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  font-size: large;
 }
 
 

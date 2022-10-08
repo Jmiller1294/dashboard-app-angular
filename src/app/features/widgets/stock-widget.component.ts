@@ -48,7 +48,7 @@ import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
       </div>
     </div>
   `,
-  styleUrls: ['../widget.component.css'],
+  styleUrls: ['./widget.component.css'],
 })
 export class StockWidgetComponent implements OnInit {
 

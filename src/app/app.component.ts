@@ -20,12 +20,4 @@ export class AppComponent implements OnInit{
     //this.cdRef.detectChanges();
   }
 
-  onFetchWeatherData() {
-    this.http.get<any>('https://api.openweathermap.org/data/2.5/weather?lat=45&lon=45&appid=' 
-      + '3a3d701928322f6c8b5ad5d274165ef3'
-    )
-    .subscribe(resp => {
-      this.loadedWeatherData = resp;
-    })
-  }
 }

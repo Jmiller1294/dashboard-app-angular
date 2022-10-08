@@ -26,7 +26,7 @@ import { FormArray, FormControl, FormGroup } from '@angular/forms';
         </form>
     </div>
   `,
-  styleUrls: ['../widget.component.css'],
+  styleUrls: ['./widget.component.css'],
 })
 export class TasksWidgetComponent implements OnInit {
   tasksForm: FormGroup;

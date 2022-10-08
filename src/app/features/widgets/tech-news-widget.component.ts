@@ -17,7 +17,7 @@ interface news {
       </p>
     </div>
   `,
-  styleUrls: ['../widget.component.css'],
+  styleUrls: ['./widget.component.css'],
 })
 export class TechNewsWidgetComponent implements OnInit {
   articleNumber:number = 0;

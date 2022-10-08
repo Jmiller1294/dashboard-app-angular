@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
       Random Fact Widget!
     </div>
   `,
-  styleUrls: ['../widget.component.css'],
+  styleUrls: ['./widget.component.css'],
 })
 export class RandomFactWidgetComponent implements OnInit {
 

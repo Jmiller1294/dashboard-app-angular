@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
       
     </div>
   `,
-  styleUrls: ['../widget.component.css'],
+  styleUrls: ['./widget.component.css'],
 })
 export class CalenderWidgetComponent implements OnInit {
 

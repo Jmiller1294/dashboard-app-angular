@@ -1,13 +1,21 @@
-import { ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
-import { TasksWidgetComponent } from './widgets/tasks-widget.component';
-import { NewsWidgetComponent } from './widgets/news-widget.component';
-import { CalenderWidgetComponent } from './widgets/calender-widget.component';
-import { WeatherWidgetComponent } from './widgets/weather-widget.component';
-import { StockWidgetComponent } from './widgets/stock-widget.component';
-import { RandomFactWidgetComponent } from './widgets/random-fact-widget.component';
-import { TechNewsWidgetComponent } from './widgets/tech-news-widget.component';
+import { ChangeDetectorRef, 
+  Component, 
+  ComponentFactoryResolver, 
+  ElementRef, EventEmitter, 
+  Input, 
+  OnInit, 
+  Output, 
+  ViewChild, 
+  ViewContainerRef } from '@angular/core';
+import { TasksWidgetComponent } from './tasks-widget.component';
+import { NewsWidgetComponent } from './news-widget.component';
+import { CalenderWidgetComponent } from './calender-widget.component';
+import { WeatherWidgetComponent } from './weather-widget.component';
+import { StockWidgetComponent } from './stock-widget.component';
+import { RandomFactWidgetComponent } from './random-fact-widget.component';
+import { TechNewsWidgetComponent } from './tech-news-widget.component';
 import { ComponentRef } from '@angular/core';
-import { BlankWidgetComponent } from './widgets/blank-widget.component';
+import { BlankWidgetComponent } from './blank-widget.component';
 
 @Component({
   selector: 'widget',
