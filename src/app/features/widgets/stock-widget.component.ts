@@ -55,7 +55,6 @@ export class StockWidgetComponent implements OnInit {
   constructor(private elRef: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'blue');
   }
 
 }

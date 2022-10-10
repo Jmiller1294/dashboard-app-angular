@@ -1,3 +1,7 @@
+* {
+  background: black;
+}
+
 .row {
   display: flex;
   flex-flow: row;
@@ -6,7 +10,6 @@
 
 .column {
   height: auto;
-  background-color: green;
   flex-flow: column;
   flex: 1;
 }
@@ -15,25 +18,26 @@
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
-  background-color: purple;
-  height: 515px;
+  height: 525px;
+  width: 100%;
+  max-width: 330px;
   padding: 25px;
   border-radius: 20px;
 }
 
-.calender-container {
+.calender-widget-container {
   display: flex;
+  padding: 15px;
   box-sizing: border-box;
-  flex-direction: column;
-  background-color: purple;
-  height: auto;
+  flex-direction: row;
+  height: 260px;
+  width: 100%;
   border-radius: 20px;
 }
 
 .news-container {
   display: flex;
   flex-direction: column;
-  background-color: purple;
   height: 200px;
   margin-bottom: 20px;
   padding: 25px;
@@ -45,14 +49,18 @@
   flex-direction: row;
   box-sizing: border-box;
   justify-content: space-between;
-  background-color: purple;
+  width: 100%;
+  margin-right: 20px;
   height: 250px;
-  padding: 25px;
+  padding: 20px;
   border-radius: 20px;
 }
 
 .stock-info {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 99.7px;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -61,18 +69,16 @@
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
-  background-color: purple;
-  height: 255px;
-  padding: 25px;
+  height: 260px;
+  padding: 20px;
   border-radius: 20px;
 }
 
 .facts-container {
   display: flex;
   flex-direction: column;
-  background-color: purple;
-  height: 200px;
-  padding: 25px;
+  height: 210px;
+  padding: 20px;
   border-radius: 20px;
 }
 .blank-container {
@@ -80,7 +86,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: purple;
   height: 200px;
   padding: 25px;
   border-radius: 20px;
@@ -91,18 +96,22 @@
 }
 
 .tasks-list {
+  height: auto;
+  word-wrap: break-word;
+  margin: 14px 0;
   list-style: none;
+  width: 90%;
+  display: flex;
+  flex: row;
 }
 
-.tasks-list {
-  margin-top: 25px;
-  line-height: 1.5;
-  font-size: 20px;
-}
-
-.tasks-form {
-  margin-top: 10px;
-  border-radius: 25px;
+.tasks-name {
+  text-overflow: hidden;
+  width: 100%;
+  height: auto;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-left: 15px;
 }
 
 .weather-icon {
@@ -110,15 +119,12 @@
   width: 90px;
 }
 
-.tasks-form {
-  width: 100%;
-  height: auto;
-}
-
 .tasks-input-box {
   width: 100%;
-  height: 100px;
+  height: 120px;
+  background-color: #FFFFFF;
   border-radius: 5px;
+  font-size: 20px;
   padding: 2px;
   margin-bottom: 20px;
 }
@@ -152,20 +158,64 @@
   font-size: large;
 }
 
-.demo-inline-calendar-card {
+.calendar {
+  height: 160px;
   width: 100%;
-  height: auto;
-  padding: 0;
-  margin: 0;
+}
+
+::ng-deep .calendar div {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+::ng-deep .calendar th {
+  color: #FFFFFF;
+  padding-bottom: 1px;
+}
+
+::ng-deep .calendar span {
+  color: #FFFFFF;
+  font-size: 16px;
+}
+
+::ng-deep .calendar td{
+  width: 20px;
+  height: 2px;
+}
+
+.time {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+.rounded {
   border-radius: 20px;
 }
 
-.calender {
-  box-sizing: border-box;
-  height: 255px;
-  width: 200px;
-  margin: 0 auto;
+.morning {
+  font-size: 16px;
 }
+
+
+
+
+
+
+
+
+
+
+ 
+
 
 
 

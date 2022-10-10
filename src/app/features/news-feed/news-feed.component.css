@@ -1,6 +1,8 @@
 .news-feed-container {
+  background-color: #212121;
+  color: #FFFFFF;
   padding: 0 20px 0 20px;
-  height: 1070px;
+  height: 1085px;
   font-size: 16px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -18,4 +20,14 @@
 
 a {
   text-decoration: none;
+  color: #FFFFFF;
+}
+
+
+a:visited {
+  color: #FFFFFF;
+}
+
+a:hover {
+  color: blue;
 }

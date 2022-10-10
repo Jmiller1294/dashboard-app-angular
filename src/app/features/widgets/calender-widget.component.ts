@@ -3,12 +3,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'calender-widget',
   template: `
-    <div class="calender-container">
-      <div class="row">
-        <mat-card class="demo-inline-calendar-card">
-          <mat-calendar class="calender"[(selected)]="selected"></mat-calendar>
-        </mat-card>   
+    <div class="calender-widget-container">
+      <div class="time">
+        <h1>10:00<span class="morning">AM</span></h1>
+        <h2>Monday</h2>
+        <h3>Oct 10</h3>
       </div>
+        <div>
+          <mat-calendar 
+            class="calendar"[(selected)]="selected"></mat-calendar>
+        </div>
     </div>
   `,
   styleUrls: ['./widget.component.css'],

@@ -12,16 +12,15 @@ import { FormArray, FormControl, FormGroup } from '@angular/forms';
             formControlName="tasks-input">
           </textarea>
           <div formArrayName="tasks" 
-            class="tasks-list-form" 
+            class="tasks-list" 
             *ngFor="let taskControl of tasksArrayControl; let i = index"
             >
-              <label>
-                <input 
+              <input 
                   type="checkbox" 
                   id="task" 
                   (input)="checkValue()"
-                  [formControlName]="i">{{i}}{{tasks[i]}}
-              </label>
+                  [formControlName]="i">
+              <label class="tasks-name">{{tasks[i]}}</label>
           </div>
         </form>
     </div>
