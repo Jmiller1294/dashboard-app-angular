@@ -139,10 +139,12 @@
 }
 
 .con {
+  display: flex;
+  flex-direction: row;
   height: 80px;
   align-items: center;
-  width: 100px;
-  margin: 0 auto;
+  width: 120px;
+  margin: 0px;
   line-height: 2.5;
 }
 .con-2 {
@@ -203,6 +205,31 @@
 
 .morning {
   font-size: 16px;
+}
+
+.wind-icon {
+  height: 25px;
+  width: 25px;
+  fill: #FFFFFF;
+}
+
+.center {
+ direction: flex;
+ margin: auto 0;
+}
+
+.cen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sdd {
+  flex: 2;
+}
+
+.marg {
+  margin-top: 10px;
 }
 
 

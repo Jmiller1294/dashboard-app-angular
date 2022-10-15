@@ -6,7 +6,11 @@ export enum WeatherIcons {
   default = "../../../assets/sun.png",
   sunny = "../../../assets/sunnny.png",
   clouds = "../../../assets/clouds.png",
-  rain ="../../../assets/rainy.png",
+  rain = "../../../assets/rainy.png",
+  humidity = "../../../assets/humidity.png",
+  pressure = "../../../assets/thermometer.png",
+  wind = "../../../assets/wind.png",
+  rainSmall = "../../../assets/rainy-small.png"
 };
 
 
@@ -29,27 +33,39 @@ export enum WeatherIcons {
       </div>
       <hr />
       <div class="row">
-        <div class="column">
-          <div class="con">
-            <div class="row">
-              dsfdfs
-              ssdfsf
+        <div class="column center">
+          <div class="row marg">
+            <div class="column cen">
+              <img class="wind-icon"[src]="icons.wind" />
             </div>
-            <div class="row">
-              sdfdff
-              ffffff
+            <div class="column sdd">
+              Wind {{weatherData?.wind}}km/h
+            </div>
+          </div>
+          <div class="row marg">
+            <div class="column cen">
+              <img class="wind-icon"[src]="icons.pressure" />
+            </div>
+            <div class="column sdd">
+              Pressure {{weatherData?.pressure}} mbar
             </div>
           </div>
         </div>
-        <div class="column">
-          <div class="con">
-            <div class="row">
-              sdfdff
-              ffffff
+        <div class="column center">
+        <div class="row marg">
+            <div class="column cen">
+              <img class="wind-icon"[src]="icons.rainSmall" />
             </div>
-            <div class="row">
-              sdfdff
-              ffffff
+            <div class="column sdd">
+              Pressure {{weatherData?.pressure}} %
+            </div>
+          </div>
+          <div class="row marg">
+            <div class="column cen">
+              <img class="wind-icon"[src]="icons.humidity" />
+            </div>
+            <div class="column sdd">
+              Humidity {{weatherData?.humidity}}%
             </div>
           </div>
         </div>

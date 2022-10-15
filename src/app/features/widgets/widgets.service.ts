@@ -18,7 +18,7 @@ export class WidgetsService {
           temp: val.main.temp,
           weatherType: val.weather[0]['main'],
           humidity: val.main.humidity,
-          wind: val.wind,
+          wind: val.wind.speed,
           pressure: val.main.pressure
         })
       })
