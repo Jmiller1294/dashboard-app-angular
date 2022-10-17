@@ -16,6 +16,8 @@ export class WidgetsService {
         return Object.assign({}, {
           location: val.name,
           temp: val.main.temp,
+          tempHigh: val.main.temp_max,
+          tempMin: val.main.temp_min,
           weatherType: val.weather[0]['main'],
           humidity: val.main.humidity,
           wind: val.wind.speed,

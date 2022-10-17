@@ -5,7 +5,9 @@ import { WidgetsService } from './widgets.service';
 export enum WeatherIcons {
   default = "../../../assets/sun.png",
   sunny = "../../../assets/sunnny.png",
-  clouds = "../../../assets/clouds.png",
+  clouds = "../../../assets/cloudy-day.png",
+  snow = "../../../assets/snowflake.png",
+  thunder = "../../../assets/snowflake.png",
   rain = "../../../assets/rainy.png",
   humidity = "../../../assets/humidity.png",
   pressure = "../../../assets/thermometer.png",
@@ -18,16 +20,19 @@ export enum WeatherIcons {
   selector: 'weather-widget',
   template: `
     <div class="weather-container">
+      <div class="row cen">
+        <h3>{{weatherData.location}}</h3>
+      </div>
       <div class="row">
         <div class="column">
           <div class="con-3">
-            <img class="weather-icon" [src]="getWeatherImage('clouds')" />
-            {{weatherData?.weatherType}}
+            <img class="weather-icon" [src]="getWeatherImage(weatherData?.weatherType)" />
+            <h4>{{weatherData?.weatherType}}</h4>
           </div>
         </div>
         <div class="column">
           <div class="con-2">
-            <span class="weather-temp">{{convertTemp(289)}}&#176;C</span>
+            <span class="weather-temp">{{convertTemp(weatherData?.temp)}}&#176;C</span>
           </div>
         </div>
       </div>
@@ -57,7 +62,7 @@ export enum WeatherIcons {
               <img class="wind-icon"[src]="icons.rainSmall" />
             </div>
             <div class="column sdd">
-              Pressure {{weatherData?.pressure}} %
+              Low / High {{convertTemp(weatherData?.tempMin)}} &#176;C / {{convertTemp(weatherData?.tempHigh)}}&#176;C
             </div>
           </div>
           <div class="row marg">
@@ -76,7 +81,7 @@ export enum WeatherIcons {
 })
 export class WeatherWidgetComponent implements OnInit {
   d: string = "hello";
-  weatherData: Weather | null;
+  weatherData: any;
   icons = WeatherIcons;
 
   constructor(private widgetsService:WidgetsService) { }
@@ -92,13 +97,14 @@ export class WeatherWidgetComponent implements OnInit {
     switch(weatherType) {
       case 'Clouds':
         return WeatherIcons.clouds;
-        break;
       case 'Rainy':
         return WeatherIcons.rain;
-        break;
       case 'Sunny':
         return WeatherIcons.sunny;
-        break;
+      case 'Snow':
+        return WeatherIcons.snow;
+      case 'Thunder':
+        return WeatherIcons.thunder;
       default:
         return WeatherIcons.default;
     }
