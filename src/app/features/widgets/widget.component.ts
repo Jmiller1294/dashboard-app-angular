@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, 
+import { ChangeDetectionStrategy, ChangeDetectorRef, 
   Component, 
   ComponentFactoryResolver, 
   ElementRef, EventEmitter, 
@@ -22,7 +22,8 @@ import { BlankWidgetComponent } from './blank-widget.component';
   template: `
     <ng-container #widgetContainer></ng-container>
   `,
-  styleUrls: ['./widget.component.css']
+  styleUrls: ['./widget.component.css'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class WidgetComponent implements OnInit {
   @Input() type: string;
@@ -37,7 +38,7 @@ export class WidgetComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.getWidgetType(this.type)
+    this.getWidgetType(this.type);
     this.cdRef.detectChanges();
   }
 

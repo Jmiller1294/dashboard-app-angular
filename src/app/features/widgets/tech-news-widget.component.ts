@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
 
 interface news {
   title: string;
@@ -18,9 +19,13 @@ interface news {
     </div>
   `,
   styleUrls: ['./widget.component.css'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class TechNewsWidgetComponent implements OnInit {
   articleNumber:number = 0;
+  intervalId:any;
+  
+
 
   
   techNews: Array<news> = [
@@ -38,19 +43,28 @@ export class TechNewsWidgetComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor(private cdRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    setInterval(() => this.incrementArticle(), 5000);
+    this.intervalId = setInterval(() => {
+      this.incrementArticle();
+      this.cdRef.detectChanges();
+    }, 5000);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
   }
 
   incrementArticle() {
     if(this.articleNumber < this.techNews.length - 1) {
-      this.articleNumber += 1;
+        this.articleNumber += 1;
     }
     else {
       this.articleNumber = 0;
     }
     
   }
+
+
 }
