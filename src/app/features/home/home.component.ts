@@ -49,8 +49,4 @@ OnDestroy {
     console.log('ngAfterContentInit');
   }
 
-  clicked(data: string) {
-    console.log(data);
-  }
-
 }

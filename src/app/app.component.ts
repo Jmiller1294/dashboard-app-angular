@@ -15,9 +15,6 @@ export class AppComponent implements OnInit{
   constructor(private http: HttpClient, private cdRef: ChangeDetectorRef) {}
 
   ngOnInit() {
-    // this.OnFetchArticles();
-    // this.onFetchWeatherData();
-    //this.cdRef.detectChanges();
   }
 
 }
