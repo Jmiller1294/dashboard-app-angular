@@ -21,7 +21,7 @@ export enum WeatherIcons {
   template: `
     <div class="weather-container">
       <div class="row cen">
-        <h3>{{weatherData.location}}</h3>
+        <h3>{{weatherData?.location}}</h3>
       </div>
       <div class="row">
         <div class="column">
@@ -44,7 +44,7 @@ export enum WeatherIcons {
               <img class="wind-icon"[src]="icons.wind" />
             </div>
             <div class="column sdd">
-              Wind {{weatherData?.wind}}km/h
+              Wind &nbsp; &nbsp; &nbsp; {{weatherData?.wind}} km/h
             </div>
           </div>
           <div class="row marg">
@@ -62,7 +62,8 @@ export enum WeatherIcons {
               <img class="wind-icon"[src]="icons.rainSmall" />
             </div>
             <div class="column sdd">
-              Low / High {{convertTemp(weatherData?.tempMin)}} &#176;C / {{convertTemp(weatherData?.tempHigh)}}&#176;C
+              Low / High {{convertTemp(weatherData?.tempMin)}} 
+              &#176;C / {{convertTemp(weatherData?.tempHigh)}}&#176;C
             </div>
           </div>
           <div class="row marg">
