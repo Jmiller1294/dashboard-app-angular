@@ -46,23 +46,44 @@
 
 .stock-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   box-sizing: border-box;
-  justify-content: space-between;
   width: 100%;
-  margin-right: 20px;
   height: 250px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 20px;
+}
+
+table th, table td{
+  text-align: center;
+}
+
+table {
+  border-spacing: 15px;
+}
+
+td {
+  font-weight: 500;
+}
+
+th {
+  font-weight: 800;
+  font-size: 17px;
 }
 
 .stock-info {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 99.7px;
-  flex-direction: column;
-  justify-content: space-between;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.stock-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
 }
 
 .weather-container {

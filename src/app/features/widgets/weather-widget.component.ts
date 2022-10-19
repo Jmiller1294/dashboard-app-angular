@@ -88,7 +88,7 @@ export class WeatherWidgetComponent implements OnInit {
   constructor(private widgetsService:WidgetsService) { }
 
   ngOnInit(): void {
-    this.widgetsService.FetchWeatherData()
+    this.widgetsService.fetchWeatherData()
       .subscribe(res => 
         this.weatherData = res
       )

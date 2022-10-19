@@ -1,15 +1,22 @@
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { map } from "rxjs";
+import { Weather } from "src/app/shared/models/weather.model";
+import { forkJoin, map, Observable } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class WidgetsService {
+  weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=40.776676&lon=-73.971321&appid=';
+  stockUrl = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo';
+  weatherApiKey = '3a3d701928322f6c8b5ad5d274165ef3';
+  stockApiKey = 'ARY3R9NDMNDTS247';
+  stockNames:Array<string> = ['IBM','TSLA', 'MSFT', 'GME','NVDA'];
+  stockData:Array<Observable<any>> = [];
   
   constructor(private http: HttpClient) {}
 
-  FetchWeatherData() {
-    return this.http.get<any>('https://api.openweathermap.org/data/2.5/weather?lat=40.776676&lon=-73.971321&appid=' 
-      + '3a3d701928322f6c8b5ad5d274165ef3'
+  fetchWeatherData() {
+    return this.http.get<any>(this.weatherUrl
+      + this.weatherApiKey
     )
     .pipe(
       map(val => {
@@ -25,5 +32,19 @@ export class WidgetsService {
         })
       })
     )
+  }
+
+  fetchStockData() {
+    this.stockNames.forEach(name => {
+      this.stockData.push(
+        this.http.get<any>(
+          'https://www.alphavantage.co/query?' +
+          `function=GLOBAL_QUOTE&symbol=${name}&apikey=demo` +
+          this.stockApiKey
+        )
+        
+      )
+    })
+    return forkJoin(this.stockData)
   }
 }

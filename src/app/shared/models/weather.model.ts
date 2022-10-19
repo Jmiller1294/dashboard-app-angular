@@ -1,4 +1,4 @@
-export interface Weather{
+export interface Weather {
   location: string,
   temp: string,
   weatherType: string,

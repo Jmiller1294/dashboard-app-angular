@@ -21,25 +21,29 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@
 export class CalenderWidgetComponent implements OnInit {
   selected: any;
   intervalId: any;
-  today = new Date();
+  
 
 
-  constructor(private cdRef:ChangeDetectorRef) { }
-
-  ngOnInit(): void {
+  constructor(private cdRef:ChangeDetectorRef) {
     this.intervalId = setInterval(() => {
-      this.getCurrentTime;
+      this.getCurrentTime();
       this.cdRef.detectChanges();
     }, 30000);
+   }
+
+  ngOnInit(): void {
+    
   }
 
   getCurrentTime() {
-    let currentTime = this.today.toLocaleTimeString();
+    let today = new Date();
+    let currentTime = today.toLocaleTimeString();
     return currentTime.split(':').splice(0,2).join(':');
   }
 
   getCurrentDay() {
-    return this.today.toLocaleDateString(
+    let today = new Date();
+    return today.toLocaleDateString(
       undefined, 
       { weekday: 'long', 
         month: 'long', 

@@ -42,7 +42,7 @@ export class TasksWidgetComponent implements OnInit {
       const control = new FormControl(false);
       (<FormArray>this.tasksForm.get('tasks')).push(control);
     })
-    this.cdRef.detectChanges()
+    this.cdRef.detectChanges();
   }
 
   get tasksArrayControl() {
