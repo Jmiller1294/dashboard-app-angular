@@ -1,10 +1,10 @@
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Weather } from "src/app/shared/models/weather.model";
-import { forkJoin, map, Observable } from "rxjs";
+import { catchError, forkJoin, map, Observable, throwError } from "rxjs";
 
 @Injectable({providedIn: 'root'})
-export class WidgetsService {
+export default class WidgetsService {
   weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=40.776676&lon=-73.971321&appid=';
   stockUrl = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo';
   weatherApiKey = '3a3d701928322f6c8b5ad5d274165ef3';
@@ -42,9 +42,15 @@ export class WidgetsService {
           `function=GLOBAL_QUOTE&symbol=${name}&apikey=demo` +
           this.stockApiKey
         )
-        
+        .pipe(
+          catchError(this.errorHandler)
+        )
       )
     })
     return forkJoin(this.stockData)
+  }
+
+  errorHandler(error: HttpErrorResponse) {
+    return throwError(() => new Error(error.message)|| new Error("Server Error"));
   }
 }

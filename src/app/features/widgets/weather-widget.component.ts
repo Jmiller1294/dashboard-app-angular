@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Weather } from 'src/app/shared/models/weather.model';
-import { WidgetsService } from './widgets.service';
+import WidgetsService from './widgets.service';
 
 export enum WeatherIcons {
   default = "../../../assets/sun.png",

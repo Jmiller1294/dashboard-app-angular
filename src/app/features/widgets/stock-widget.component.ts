@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { WidgetsService } from './widgets.service';
+import WidgetsService from './widgets.service';
 import { Stock } from 'src/app/shared/models/stock.model';
 import { map, Observable } from 'rxjs';
 
