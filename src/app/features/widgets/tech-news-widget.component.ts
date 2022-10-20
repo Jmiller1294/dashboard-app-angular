@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
+import WidgetsService from './widgets.service';
 
 interface news {
   title: string;
@@ -12,9 +13,10 @@ interface news {
   template: 
   `
     <div class="facts-container">
-      <h1>{{this.techNews[this.articleNumber].title}}</h1>
+      <h4>{{this.techNews[this.articleNumber]?.title}}</h4>
+      <br />
       <p>
-        {{this.techNews[this.articleNumber].description}}
+        {{this.techNews[this.articleNumber]?.description}}
       </p>
     </div>
   `,
@@ -24,32 +26,26 @@ interface news {
 export class TechNewsWidgetComponent implements OnInit {
   articleNumber:number = 0;
   intervalId:any;
+  techNews: Array<any> = [];
   
 
-
-  
-  techNews: Array<news> = [
-    {
-      title: "Hello",
-      description: "Good Afternoon this is your news"
-    },
-    {
-      title: "More News",
-      description: "Welcome to more news"
-    },
-    {
-      title: "Last News",
-      description: "End of the day news"
-    },
-  ]
-
-  constructor(private cdRef: ChangeDetectorRef) {}
+  constructor(private cdRef: ChangeDetectorRef, private widgetsService: WidgetsService) {}
 
   ngOnInit(): void {
-    this.intervalId = setInterval(() => {
+    this.widgetsService.fetchTechNewsData()
+    .subscribe(val => {
+      this.techNews = val
+      this.cdRef.detectChanges()
+      console.log(this.techNews);
+    })
+    console.log(this.techNews);
+  }
+
+  ngAfterViewInit() {
+     this.intervalId = setInterval(() => {
       this.incrementArticle();
       this.cdRef.detectChanges();
-    }, 5000);
+    }, 10000);
   }
 
   ngOnDestroy() {
@@ -63,7 +59,6 @@ export class TechNewsWidgetComponent implements OnInit {
     else {
       this.articleNumber = 0;
     }
-    
   }
 
 

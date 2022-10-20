@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Weather } from 'src/app/shared/models/weather.model';
 import WidgetsService from './widgets.service';
 
@@ -79,19 +79,21 @@ export enum WeatherIcons {
     </div>
   `,
   styleUrls: ['./widget.component.css'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class WeatherWidgetComponent implements OnInit {
   d: string = "hello";
   weatherData: any;
   icons = WeatherIcons;
 
-  constructor(private widgetsService:WidgetsService) { }
+  constructor(private widgetsService: WidgetsService, private cdRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.widgetsService.fetchWeatherData()
-      .subscribe(res => 
-        this.weatherData = res
-      )
+      .subscribe(val => {
+        this.weatherData = val
+        this.cdRef.detectChanges()
+      })
   }
 
   getWeatherImage(weatherType: string) {

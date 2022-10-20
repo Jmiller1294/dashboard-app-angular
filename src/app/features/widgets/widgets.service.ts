@@ -11,6 +11,7 @@ export default class WidgetsService {
   stockApiKey = 'ARY3R9NDMNDTS247';
   stockNames:Array<string> = ['IBM','TSLA', 'MSFT', 'GME','NVDA'];
   stockData:Array<Observable<any>> = [];
+  isLoaded: boolean = false;
   
   constructor(private http: HttpClient) {}
 
@@ -37,7 +38,7 @@ export default class WidgetsService {
   fetchStockData() {
     this.stockNames.forEach(name => {
       this.stockData.push(
-        this.http.get<any>(
+        this.http.get<{}>(
           'https://www.alphavantage.co/query?' +
           `function=GLOBAL_QUOTE&symbol=${name}&apikey=demo` +
           this.stockApiKey
@@ -50,7 +51,17 @@ export default class WidgetsService {
     return forkJoin(this.stockData)
   }
 
+  fetchTechNewsData() {
+    return this.http.get<{articles: []}>('https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey='
+      + '0176803c14204800ae658c2d02a9c37f'
+    ) 
+    .pipe(
+      map((val) => val.articles),
+      catchError(this.errorHandler)
+    )
+  }
+
   errorHandler(error: HttpErrorResponse) {
-    return throwError(() => new Error(error.message)|| new Error("Server Error"));
+    return throwError(() => new Error(error.message) || new Error("Server Error"));
   }
 }

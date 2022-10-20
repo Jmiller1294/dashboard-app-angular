@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, 
+import { ChangeDetectionStrategy, ChangeDetectorRef, 
   Component, 
   ElementRef, EventEmitter, 
   Input, 
@@ -22,6 +22,7 @@ import { BlankWidgetComponent } from './blank-widget.component';
     <ng-container #widgetContainer></ng-container>
   `,
   styleUrls: ['./widget.component.css'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class WidgetComponent implements OnInit {
   @Input() type: string;
