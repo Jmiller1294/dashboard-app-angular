@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'blank-widget',
   template: `
     <div class="blank-container">
-     <span class="add-widget-button">+</span>
+     <button class="add-widget-button">+</button>
     </div>
   `,
   styleUrls: ['./widget.component.css'],

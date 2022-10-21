@@ -12,10 +12,10 @@ interface news {
   selector: 'tech-news-widget',
   template: 
   `
-    <div class="facts-container">
+    <div class="tech-news-container">
       <h4>{{this.techNews[this.articleNumber]?.title}}</h4>
       <br />
-      <p>
+      <p class="tech-news-desc">
         {{this.techNews[this.articleNumber]?.description}}
       </p>
     </div>
