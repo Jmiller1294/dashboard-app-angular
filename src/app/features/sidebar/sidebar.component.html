@@ -1,5 +1,5 @@
 <div class="container">
   <div class="image-con" *ngFor="let image of images">
-    <img [src]=image />
+    <img [class]=image.class [src]="image.url"/>
   </div>
 </div>

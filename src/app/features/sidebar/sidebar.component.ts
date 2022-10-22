@@ -1,14 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 
 export const images = [
-  '../../../assets/icons8-home-50.png',
-  '../../../assets/icons8-calendar-40.png',
-  '../../../assets/icons8-technology-40.png',
-  '../../../assets/icons8-tidy-shelf-40.png',
-  '../../../assets/icons8-stocks-40 (1).png',
-  '../../../assets/icons8-stormy-weather-40.png',
-  '../../../assets/icons8-settings-40.png'
+  {
+    class: "home-icon",
+    url: '../../../assets/icons8-home-grey.png'
+  },
+  {
+    class: "calender-icon",
+    url: '../../../assets/icons8-calendar-grey.png'
+  },
+  {
+    class: "library-icon",
+    url: '../../../assets/icons8-book-shelf-grey.png'
+  },
+  {
+    class: "stocks-icon",
+    url: '../../../assets/icons8-stocks-grey.png'
+  },
+  {
+    class: "list-icon",
+    url: '../../../assets/icons8-list-grey.png'
+  },
+  {
+    class: "settings-icon",
+    url: '../../../assets/icons8-engineering-grey.png'
+  },
 ]
+
 
 @Component({
   selector: 'sidebar',
@@ -17,8 +35,10 @@ export const images = [
 })
 export class SidebarComponent implements OnInit {
 images: any = images;
+imageUrl: any;
+hover: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {}
 
