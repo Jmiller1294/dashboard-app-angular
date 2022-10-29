@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './features/home/home.component';
+import { HomeComponent } from './public/pages/home/home.component';
 import { WidgetComponent } from './features/widgets/widget.component';
 import { NavbarComponent } from './features/navbar/navbar.component';
 import { SidebarComponent } from './features/sidebar/sidebar.component';
@@ -21,6 +21,16 @@ import { TechNewsWidgetComponent } from './features/widgets/tech-news-widget.com
 import { BlankWidgetComponent } from './features/widgets/blank-widget.component';
 import { NewsFeedService } from './features/news-feed/news-feed.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'calender', component: HomeComponent },
+  { path: 'library', component: HomeComponent },
+  { path: 'stocks', component: HomeComponent },
+  { path: 'tasks', component: HomeComponent },
+  { path: 'settings', component: HomeComponent }
+];
 
 @NgModule({
   declarations: [
@@ -46,7 +56,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatCardModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
