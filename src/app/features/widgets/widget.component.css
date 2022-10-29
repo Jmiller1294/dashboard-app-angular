@@ -288,7 +288,18 @@ th {
   font-size: 45px;
 }
 
+.tech-news-link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
 
+.tech-news-link:visited {
+  color: #FFFFFF;
+}
+
+.tech-news-link:hover {
+  color: blue;
+}
 
 
 

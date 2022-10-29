@@ -1,6 +1,4 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
 import WidgetsService from './widgets.service';
 
 interface news {
@@ -13,7 +11,10 @@ interface news {
   template: 
   `
     <div class="tech-news-container">
-      <h4>{{this.techNews[this.articleNumber]?.title}}</h4>
+      <a [href]="this.techNews[this.articleNumber]?.url"
+        target="_blank" class="tech-news-link">
+        <h4>{{this.techNews[this.articleNumber]?.title}}</h4>
+      </a>
       <br />
       <p class="tech-news-desc">
         {{this.techNews[this.articleNumber]?.description}}
