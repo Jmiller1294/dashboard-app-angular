@@ -24,7 +24,6 @@ import { LibraryComponent } from './public/pages/library/library.component';
 import { SettingsComponent } from './public/pages/settings/settings.component';
 import { StocksComponent } from './public/pages/stocks/stocks.component';
 import { TasksComponent } from './public/pages/tasks/tasks.component';
-import { NewsFeedService } from './features/news-feed/news-feed.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 
