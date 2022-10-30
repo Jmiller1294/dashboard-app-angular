@@ -1,5 +1,5 @@
 <div class="container">
   <div class="image-con" *ngFor="let image of images">
-    <a [routerLink]="'{{image.path}}'"><img [class]=image.class [src]="image.url" /></a>
+    <a [routerLink]="image.path"><img [class]=image.class [src]="image.url" /></a>
   </div>
 </div>

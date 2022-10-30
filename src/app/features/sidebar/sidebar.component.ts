@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 export const images = [
   {
@@ -24,7 +24,7 @@ export const images = [
   {
     class: "list-icon",
     url: '../../../assets/icons8-list-grey.png',
-    path: '/list'
+    path: '/tasks'
   },
   {
     class: "settings-icon",
@@ -37,7 +37,7 @@ export const images = [
 @Component({
   selector: 'sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 
 export class SidebarComponent implements OnInit {

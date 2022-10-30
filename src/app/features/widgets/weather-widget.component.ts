@@ -90,7 +90,7 @@ export class WeatherWidgetComponent implements OnInit {
 
   ngOnInit(): void {
     this.widgetsService.fetchWeatherData()
-      .subscribe(val => {
+      .subscribe((val: any ) => {
         this.weatherData = val
         this.cdRef.detectChanges()
       })

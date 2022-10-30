@@ -34,7 +34,7 @@ export class TechNewsWidgetComponent implements OnInit {
 
   ngOnInit(): void {
     this.widgetsService.fetchTechNewsData()
-    .subscribe(val => {
+    .subscribe((val:any )=> {
       this.techNews = val
       this.cdRef.detectChanges()
       console.log(this.techNews);

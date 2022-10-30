@@ -49,6 +49,7 @@
   flex-direction: column;
   box-sizing: border-box;
   height: 250px;
+  max-height: 250px;
   padding: 10px;
   border-radius: 20px;
 }
@@ -59,6 +60,8 @@ table th, table td{
 
 table {
   border-spacing: 15px;
+  height: 200px;
+  max-height: 240px;
 }
 
 td {
@@ -68,6 +71,11 @@ td {
 th {
   font-weight: 800;
   font-size: 17px;
+}
+
+tbody {
+  height: 150px;
+  max-height: 150px;
 }
 
 .stock-info {
@@ -90,7 +98,7 @@ th {
   box-sizing: border-box;
   flex-direction: column;
   height: 260px;
-  padding: 20px;
+  padding: 18px;
   border-radius: 20px;
 }
 

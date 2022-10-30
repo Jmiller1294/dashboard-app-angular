@@ -18,18 +18,23 @@ import { WeatherWidgetComponent } from './features/widgets/weather-widget.compon
 import { NewsFeedComponent } from './features/news-feed/news-feed.component';
 import { RandomFactWidgetComponent } from './features/widgets/random-fact-widget.component';
 import { TechNewsWidgetComponent } from './features/widgets/tech-news-widget.component';
+import { CalenderComponent } from './public/pages/calender/calender.component';
 import { BlankWidgetComponent } from './features/widgets/blank-widget.component';
+import { LibraryComponent } from './public/pages/library/library.component';
+import { SettingsComponent } from './public/pages/settings/settings.component';
+import { StocksComponent } from './public/pages/stocks/stocks.component';
+import { TasksComponent } from './public/pages/tasks/tasks.component';
 import { NewsFeedService } from './features/news-feed/news-feed.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'calender', component: HomeComponent },
-  { path: 'library', component: HomeComponent },
-  { path: 'stocks', component: HomeComponent },
-  { path: 'tasks', component: HomeComponent },
-  { path: 'settings', component: HomeComponent }
+  { path: 'calender', component: CalenderComponent },
+  { path: 'library', component: LibraryComponent },
+  { path: 'stocks', component: StocksComponent },
+  { path: 'tasks', component: TasksComponent },
+  { path: 'settings', component: SettingsComponent }
 ];
 
 @NgModule({
@@ -48,6 +53,11 @@ const appRoutes: Routes = [
     NewsFeedComponent,
     RandomFactWidgetComponent,
     BlankWidgetComponent,
+    CalenderComponent,
+    SettingsComponent,
+    LibraryComponent,
+    TasksComponent,
+    StocksComponent
   ],
   imports: [
     BrowserModule,
