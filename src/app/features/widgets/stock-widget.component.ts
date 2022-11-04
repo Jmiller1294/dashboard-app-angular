@@ -36,17 +36,17 @@ export class StockWidgetComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('init stock');
-      this.subscription = this.widgetsService.fetchStockData() 
-      .subscribe(val => {
-        console.log(val)
-        this.stocks = val
-        this.cdRef.detectChanges()
-      })
+    // console.log('init stock');
+    //   this.subscription = this.widgetsService.fetchStockData() 
+    //   .subscribe(val => {
+    //     console.log(val)
+    //     this.stocks = val
+    //     this.cdRef.detectChanges()
+    //   })
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    //this.subscription.unsubscribe();
   }
 
 }

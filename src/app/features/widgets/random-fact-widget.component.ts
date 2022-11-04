@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import WidgetsService from './widgets.service';
 
 @Component({
   selector: 'app-random-fact-widget',
@@ -12,9 +13,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RandomFactWidgetComponent implements OnInit {
 
-  constructor() { }
+  constructor(private widgetsService: WidgetsService) { }
 
   ngOnInit(): void {
+    // this.widgetsService.fetchRandomFactData()
+    //   .subscribe()
   }
 
 }

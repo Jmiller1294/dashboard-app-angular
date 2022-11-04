@@ -33,13 +33,13 @@ export class TechNewsWidgetComponent implements OnInit {
   constructor(private cdRef: ChangeDetectorRef, private widgetsService: WidgetsService) {}
 
   ngOnInit(): void {
-    this.widgetsService.fetchTechNewsData()
-    .subscribe((val:any )=> {
-      this.techNews = val
-      this.cdRef.detectChanges()
-      console.log(this.techNews);
-    })
-    console.log(this.techNews);
+    // this.widgetsService.fetchTechNewsData()
+    // .subscribe((val:any )=> {
+    //   this.techNews = val
+    //   this.cdRef.detectChanges()
+    //   console.log(this.techNews);
+    // })
+    // console.log(this.techNews);
   }
 
   ngAfterViewInit() {

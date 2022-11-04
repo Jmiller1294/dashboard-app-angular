@@ -89,11 +89,11 @@ export class WeatherWidgetComponent implements OnInit {
   constructor(private widgetsService: WidgetsService, private cdRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    this.widgetsService.fetchWeatherData()
-      .subscribe((val: any ) => {
-        this.weatherData = val
-        this.cdRef.detectChanges()
-      })
+    // this.widgetsService.fetchWeatherData()
+    //   .subscribe((val: any ) => {
+    //     this.weatherData = val
+    //     this.cdRef.detectChanges()
+    //   })
   }
 
   getWeatherImage(weatherType: string) {

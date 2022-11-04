@@ -1,0 +1,26 @@
+.library-page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #121212;
+  color: #ffffff;
+  font-weight: 500;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 15px;
+  opacity: 0.8;
+  overflow: scroll;
+}
+
+.header {
+  margin-top: 20px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: auto;
+  margin-top: 30px;
+}
+

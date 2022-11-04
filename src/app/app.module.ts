@@ -24,6 +24,9 @@ import { LibraryComponent } from './public/pages/library/library.component';
 import { SettingsComponent } from './public/pages/settings/settings.component';
 import { StocksComponent } from './public/pages/stocks/stocks.component';
 import { TasksComponent } from './public/pages/tasks/tasks.component';
+import { CardComponent } from './features/card/card.component';
+import { LibraryCategoryComponent } from './public/pages/library/library.category.component';
+import { LibraryTopicComponent } from './public/pages/library/library.topic.component';
 import { NewsFeedService } from './features/news-feed/news-feed.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
@@ -31,10 +34,13 @@ import { RouterModule, Routes } from '@angular/router';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'calender', component: CalenderComponent },
-  { path: 'library', component: LibraryComponent },
+  { path: 'library', component: LibraryComponent, children: [
+    { path: ':categories', component: LibraryCategoryComponent },
+    { path: ':categories/:topic', component: LibraryTopicComponent },
+  ] },
   { path: 'stocks', component: StocksComponent },
   { path: 'tasks', component: TasksComponent },
-  { path: 'settings', component: SettingsComponent }
+  { path: 'settings', component: SettingsComponent },
 ];
 
 @NgModule({
@@ -57,7 +63,10 @@ const appRoutes: Routes = [
     SettingsComponent,
     LibraryComponent,
     TasksComponent,
-    StocksComponent
+    StocksComponent,
+    CardComponent,
+    LibraryCategoryComponent,
+    LibraryTopicComponent
   ],
   imports: [
     BrowserModule,

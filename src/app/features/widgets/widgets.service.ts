@@ -11,11 +11,13 @@ export default class WidgetsService {
   stockApiKey = 'ARY3R9NDMNDTS247';
   stockNames:Array<string> = ['IBM','TSLA', 'MSFT', 'GME','NVDA'];
   stockData:Array<Observable<any>> = [];
+  randomFactData: any;
   weatherData:any = {};
   techNewsData:any = {}
   weatherLoaded: boolean = false;
   stocksLoaded: boolean = false;
   techNewsLoaded: boolean = false;
+  randomFactDataLoaded: boolean = false;
   
   constructor(private http: HttpClient) {}
 
@@ -66,7 +68,8 @@ export default class WidgetsService {
 
   fetchTechNewsData() {
     if(!this.techNewsLoaded) {
-      this.techNewsData = this.http.get<{articles: []}>('https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey='
+      this.techNewsData = this.http.get<{articles: []}>(
+        'https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey='
         + '0176803c14204800ae658c2d02a9c37f'
       ) 
       .pipe(
@@ -74,10 +77,25 @@ export default class WidgetsService {
         catchError(this.errorHandler),
         shareReplay(1)
       )
-      this.techNewsLoaded;
+      this.techNewsLoaded = true;
     }
     return this.techNewsData;
   }
+
+  // fetchRandomFactData() {
+  //   if(!this.randomFactDataLoaded) {
+  //     this.randomFactData = this.http.get<any>(
+  //       'https://fungenerators.com/random/facts/animal/weasel'
+  //     ) 
+  //     .pipe(
+  //       map((val) => console.log(val)),
+  //       catchError(this.errorHandler),
+  //       shareReplay(1)
+  //     )
+  //     //this.techNewsLoaded = true;
+  //   }
+  //   return this.randomFactData;
+  // }
 
   errorHandler(error: HttpErrorResponse) {
     return throwError(() => new Error(error.message) || new Error("Server Error"));
