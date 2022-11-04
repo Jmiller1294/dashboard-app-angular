@@ -17,10 +17,10 @@ export class NewsFeedComponent implements OnInit,AfterViewInit {
   constructor(private newsFeedService: NewsFeedService,private cdRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    // this.newsFeedService.fetchArticles()
-    //   .subscribe(res => 
-    //     this.articles = res,
-    //   )
+    this.newsFeedService.fetchArticles()
+      .subscribe(res => 
+        this.articles = res,
+      )
   }
 
   ngAfterViewInit() {
