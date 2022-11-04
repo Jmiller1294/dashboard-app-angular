@@ -52,6 +52,60 @@ export class LibraryService {
                       {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
                     ]
         }, 
+        { name: 'Queue',
+          articles: [ 
+                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
+                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
+                    ]
+        }, 
+        { name: 'Queue',
+          articles: [ 
+                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
+                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
+                    ]
+        }, 
+        { name: 'Queue',
+          articles: [ 
+                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
+                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
+                    ]
+        }, 
+        { name: 'Queue',
+          articles: [ 
+                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
+                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
+                    ]
+        }, 
+        { name: 'Queue',
+          articles: [ 
+                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
+                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
+                    ]
+        }, 
+        { name: 'Queue',
+          articles: [ 
+                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
+                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
+                    ]
+        }, 
+        { name: 'Queue',
+          articles: [ 
+                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
+                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
+                    ]
+        }, 
+        { name: 'Queue',
+          articles: [ 
+                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
+                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
+                    ]
+        }, 
+        { name: 'Queue',
+          articles: [ 
+                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
+                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
+                    ]
+        }, 
       ]
     },
     {

@@ -5,11 +5,15 @@ import { LibraryService } from './library.service';
   selector: 'library-category',
   template: `
     <div>
-      <h1>{{this.categoryType}}</h1>
-      <library-topic 
-        *ngFor="let topic of topics" 
-        [topic]="topic"
-      >{{console.log(topic)}}</library-topic>
+      <h1 class="category-header">{{this.categoryType}}</h1>
+      <button>ADD CATEGORY</button>
+      <button>ADD TOPIC</button>
+      <div class="topics-container">
+        <library-topic 
+          *ngFor="let topic of topics" 
+          [topic]="topic"
+        >{{console.log(topic)}}</library-topic>
+      </div>
     </div>
   `,
   styleUrls: ['./library.component.css']
