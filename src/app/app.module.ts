@@ -30,6 +30,7 @@ import { LibraryTopicComponent } from './public/pages/library/library.topic.comp
 import { NewsFeedService } from './features/news-feed/news-feed.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
+import { ModalComponent } from './shared/modal.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -66,7 +67,8 @@ const appRoutes: Routes = [
     StocksComponent,
     CardComponent,
     LibraryCategoryComponent,
-    LibraryTopicComponent
+    LibraryTopicComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,12 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { LibraryService } from './library.service';
 
+
 @Component({
   selector: 'library-category',
   template: `
     <div>
       <h1 class="category-header">{{this.categoryType}}</h1>
-      <button>ADD CATEGORY</button>
-      <button>ADD TOPIC</button>
       <div class="topics-container">
         <library-topic 
           *ngFor="let topic of topics" 

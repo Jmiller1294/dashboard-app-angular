@@ -6,7 +6,7 @@
   color: #ffffff;
   font-weight: 500;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  padding: 30px;
+  padding: 40px;
   opacity: 0.8;
   overflow: scroll;
 }
@@ -26,9 +26,8 @@
 
 .topics-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: scroll;
   height: 100vh;
 }
 
@@ -36,12 +35,17 @@
   display: flex;
   flex-direction: column;
   height: auto;
-  width: 370px;
+  max-height: 200px;
   margin-right: 50px;
+  margin-bottom: 20px;
+}
+
+ul {
 }
 
 li {
   list-style: none;
+  margin-right: 20px;
 }
 
 button {
@@ -51,6 +55,6 @@ button {
 }
 
 .category-header {
-  margin-left: 20px;
+  margin-bottom: 40px;
 }
 

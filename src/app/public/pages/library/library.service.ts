@@ -28,84 +28,6 @@ export class LibraryService {
                       {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
                     ]
         }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
-        { name: 'Queue',
-          articles: [ 
-                      {name: 'Making A Queue', url: 'sdfsdfdsfsdfs'}, 
-                      {name: 'time complexity of a Queue', url: 'sdfsdfdsfsdfs'}
-                    ]
-        }, 
       ]
     },
     {
@@ -170,6 +92,19 @@ export class LibraryService {
 
   getTopics() {
     return this.categories.flatMap((val:any) => val.topics);
+  }
+
+  addTopicArticle(topicName: string, article: {}) {
+    const topic = this.getTopics().find((val: any) => val.name === topicName);
+    console.log(topic);
+    topic.articles.push(article);
+  }
+
+  addNewTopic(categoryName: string, newTopicName: string) {
+    const category = this.categories.find((val:any) => val.name === categoryName);
+    console.log(category)
+    const newTopic = { name: newTopicName, articles: []}
+    category.topics.push(newTopic);
   }
 
   
