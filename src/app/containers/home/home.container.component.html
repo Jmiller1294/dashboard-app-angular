@@ -1,0 +1,49 @@
+<div class="home-container">  
+  <div class="grid">
+    <div class="row margin-bottom">
+      <div class="column two">
+        <div class="row margin-bottom">
+          <div class="column">
+            <widget-container [type]="'weather'"></widget-container>
+          </div>
+          <div class="column">
+            <widget-container [type]="'calender'"></widget-container>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <widget-container [type]="'stocks'"></widget-container>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <widget-container [type]="'tasks'"></widget-container>
+      </div>
+    </div>
+    <div class="row margin-bottom">
+      <div class="column">
+        <widget-container [type]="'tech'"></widget-container>
+      </div>
+      <div class="column">
+        <widget-container [type]="'facts'"></widget-container>
+      </div>
+      <div class="column">
+        <widget-container [type]="'facts'"></widget-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <widget-container [type]="'blank'"></widget-container>
+      </div>
+      <div class="column">
+        <widget-container [type]="'blank'"></widget-container>
+      </div>
+      <div class="column">
+        <widget-container [type]="'blank'"></widget-container>
+      </div>
+    </div>
+  </div>
+  <div class="news-container">
+    <news-feed></news-feed>
+  </div>
+</div>
