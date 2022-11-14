@@ -1,27 +1,14 @@
-.library-page-container {
+.library-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: #121212;
-  color: #ffffff;
-  font-weight: 500;
+  background-color: #121212;
+  color: #FFFFFF;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 40px;
   opacity: 0.8;
+  font-weight: 500;
   overflow: scroll;
-}
-
-.header {
-  margin-top: 20px;
-}
-
-.cards-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  height: auto;
-  margin-top: 30px;
 }
 
 .topics-container {
@@ -40,20 +27,11 @@
   margin-bottom: 20px;
 }
 
-
 li {
   list-style: none;
   margin-right: 20px;
 }
 
-button {
-  margin: 20px 0px 10px 20px;
-  height: 40px;
-  width: 170px;
-  font-size: 20px;
-}
-
 .category-header {
   margin-bottom: 40px;
 }
-

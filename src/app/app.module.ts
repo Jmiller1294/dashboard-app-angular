@@ -25,8 +25,9 @@ import { SettingsPageComponent } from './public/pages/settingspage/settings.comp
 import { StocksPageComponent } from './public/pages/stockspage/stocks.page.component';
 import { TasksPageComponent } from './public/pages/taskspage/tasks.page.component';
 import { CardComponent } from './components/features/card/card.component';
-import { LibraryCategoryComponent } from './public/pages/librarypage/library.category.component';
-import { LibraryTopicComponent } from './public/pages/librarypage/library.topic.component';
+import { LibraryCategoryComponent } from './components/features/library/library.category.component';
+import { LibraryTopicComponent } from './components/features/library/library.topic.component';
+import { LibraryContainerComponent } from './containers/library/library.container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { ModalComponent } from './components/features/modal/modal.component';
@@ -66,6 +67,7 @@ const appRoutes: Routes = [
     CardComponent,
     LibraryCategoryComponent,
     LibraryTopicComponent,
+    LibraryContainerComponent,
     ModalComponent,
     HomeContainerComponent
   ],

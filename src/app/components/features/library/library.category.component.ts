@@ -5,7 +5,7 @@ import { LibraryService } from '../../../services/library.service';
 @Component({
   selector: 'library-category',
   template: `
-    <div>
+    <div class="library-container">
       <h1 class="category-header">{{this.categoryType}}</h1>
       <div class="topics-container">
         <library-topic 
