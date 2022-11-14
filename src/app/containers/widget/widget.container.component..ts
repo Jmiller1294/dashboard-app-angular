@@ -77,12 +77,12 @@ export class WidgetContainerComponent implements OnInit {
         break;
       case 'stocks':
         let StockComponentRef: ComponentRef<StockWidgetComponent>;
-        //this.stockDataSubscription = this.widgetsService.fetchStockData() 
-          // .subscribe(val => {
-          //   StockComponentRef = this.widgetContainer.createComponent(StockWidgetComponent);
-          //   StockComponentRef.instance.stocks = val;
-          //   this.cdRef.detectChanges();
-          // })
+        // this.stockDataSubscription = this.widgetsService.fetchStockData() 
+        //   .subscribe(val => {
+        //     StockComponentRef = this.widgetContainer.createComponent(StockWidgetComponent);
+        //     StockComponentRef.instance.stocks = val;
+        //     this.cdRef.detectChanges();
+        //   })
         break;
       case 'facts':
         let FactsComponentRef: ComponentRef<RandomFactWidgetComponent>;
@@ -90,12 +90,12 @@ export class WidgetContainerComponent implements OnInit {
         break;
       case 'tech':
         let TechNewsComponentRef: ComponentRef<TechNewsWidgetComponent>;
-        this.widgetsService.fetchTechNewsData()
-          .subscribe((val:any )=> {
-            TechNewsComponentRef = this.widgetContainer.createComponent(TechNewsWidgetComponent);
-            TechNewsComponentRef.instance.techNews = val;
-            this.cdRef.detectChanges();
-        })
+        // this.widgetsService.fetchTechNewsData()
+        //   .subscribe((val:any )=> {
+        //     TechNewsComponentRef = this.widgetContainer.createComponent(TechNewsWidgetComponent);
+        //     TechNewsComponentRef.instance.techNews = val;
+        //     this.cdRef.detectChanges();
+        // })
         break;
       default:
         let BlankComponentRef: ComponentRef<BlankWidgetComponent>;

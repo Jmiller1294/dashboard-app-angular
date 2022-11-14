@@ -309,6 +309,36 @@ tbody {
   color: blue;
 }
 
+.widget-form {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.widget-form-select {
+  background-color: #FFFFFF;
+  width: 200px;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.widget-form-label {
+  background-color: #FFFFFF;
+}
+
+.form-labels {
+  background-color: #FFFFFF;
+  margin-right: 10px;
+}
+
+.form-inputs {
+  background-color: #FFFFFF;
+}
+
+
 
 
 
