@@ -19,7 +19,7 @@ import { NewsFeedComponent } from './components/features/news-feed/news-feed.com
 import { RandomFactWidgetComponent } from './components/features/widgets/random-fact-widget.component';
 import { TechNewsWidgetComponent } from './components/features/widgets/tech-news-widget.component';
 import { CalenderPageComponent } from './public/pages/calenderpage/calender.page.component';
-import { BlankWidgetComponent } from './components/features/widgets/blank-widget.component';
+import { CustomWidgetComponent } from './components/features/widgets/custom-widget.component';
 import { LibraryPageComponent } from './public/pages/librarypage/library.page.component';
 import { SettingsPageComponent } from './public/pages/settingspage/settings.component';
 import { StocksPageComponent } from './public/pages/stockspage/stocks.page.component';
@@ -58,7 +58,7 @@ const appRoutes: Routes = [
     SidebarComponent,
     NewsFeedComponent,
     RandomFactWidgetComponent,
-    BlankWidgetComponent,
+    CustomWidgetComponent,
     CalenderPageComponent,
     SettingsPageComponent,
     LibraryPageComponent,

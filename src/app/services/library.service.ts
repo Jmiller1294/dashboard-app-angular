@@ -12,7 +12,7 @@ export class LibraryService {
       topics: [
         { name: 'Binary Tree',
           articles: [ 
-                      {name: 'traversing a binary tree', url: 'sdfsdfdsfsdfs'}, 
+                      {name: 'traversing a binary tree', url: 'https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/'}, 
                       {name: 'traversing a binary tree', url: 'sdfsdfdsfsdfs'}
                     ]
         }, 

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'blank-widget',
+  selector: 'custom-widget',
   template: `
-    <div *ngIf="!displayWidget else widget" class="blank-container">
+    <div *ngIf="!displayWidget else widget" class="custom-widget-con">
      <button class="add-widget-button" (click)="OnAddWidget()">+</button>
      <modal 
       *ngIf="addWidget"
@@ -29,11 +29,11 @@ import { Component, OnInit } from '@angular/core';
   `,
   styleUrls: ['./widget.component.css'],
 })
-export class BlankWidgetComponent implements OnInit {
+export class CustomWidgetComponent implements OnInit {
   addWidget: boolean = false;
   displayWidget: boolean = false;
   widgetTypes: Array<string> = ['calender','weather', 'tech', 'facts'];
-  widgetType: string = 'blank';
+  widgetType: string = 'calender';
 
   constructor() { }
 

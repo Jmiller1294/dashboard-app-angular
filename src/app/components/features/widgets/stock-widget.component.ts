@@ -18,7 +18,7 @@ import { delay, map, Observable, shareReplay, Subject, Subscription, take, takeU
             <td>{{stock['Global Quote']['05. price'].slice(0,-2)}}</td>
             <td>{{stock['Global Quote']['03. high'].slice(0,-2)}}</td>
             <td>{{stock['Global Quote']['04. low'].slice(0,-2)}}</td>
-            <td>{{stock['Global Quote']['09. change']}}</td>
+            <td>{{stock['Global Quote']['09. change'].slice(0,-2)}} %</td>
           </tr>
         </tbody>
       </table>

@@ -132,7 +132,7 @@ tbody {
   font-size: 14px;
 }
 
-.blank-container {
+.custom-widget-con {
   display: flex;
   flex: 0 1 330px;
   flex-direction: column;
@@ -149,10 +149,13 @@ tbody {
   height: 70px;
   width: 70px;
   font-size: 70px;
-  color: #FFFFFF;
   border: none;
+  color: grey;
 }
 
+.add-widget-button:hover {
+  color: #FFFFFF;
+}
 
 .tasks-list {
   height: auto;

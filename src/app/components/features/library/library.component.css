@@ -35,3 +35,12 @@ li {
 .category-header {
   margin-bottom: 40px;
 }
+
+.article-link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.article-link:visited {
+  color: #FFFFFF;
+}

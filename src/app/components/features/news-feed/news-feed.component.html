@@ -1,7 +1,7 @@
 <div class="news-feed-container">
   <ng-container  *ngFor="let article of articles">
     <div class="article-container"> 
-      <img [src]="article.urlToImage" alt="article img"class="article-image"/>
+      <img [src]="article.urlToImage ? article.urlToImage : 'https://via.placeholder.com/295x120?text=No+Image+Available'" alt="article img"class="article-image"/>
       <a [href]="article.url" target="_blank">{{article.title}}</a>
     </div>
   </ng-container>

@@ -25,8 +25,8 @@ import { LibraryService } from '../../services/library.service';
           <form class="add-topic-form">
             <div class="form-labels">
               <label>Category: </label>
-              <label>Topic: </label>
               <label>New Topic: </label>
+              <label>Topic: </label>
               <label>Name: </label>
               <label>URL: </label>
             </div>
@@ -36,17 +36,17 @@ import { LibraryService } from '../../services/library.service';
                   <option *ngFor="let category of categories">{{category.name}}</option>
                 </select>
               </p>
-              <p>
-                <select (change)="onTopicSelect($event)">
-                  <option *ngFor="let topic of topics">{{topic.name}}</option>
-                </select>
-              </p>
               <P>
                 <input (input)="onTopicChanged($event)" class="topic-input"/>
                 <button type="button" 
                   class="add-new-topic" 
                   (click)="onAddNewTopic()">Add New Topic</button>
               </P>
+              <p>
+                <select (change)="onTopicSelect($event)">
+                  <option *ngFor="let topic of topics">{{topic.name}}</option>
+                </select>
+              </p>
               <p>
                 <input 
                   (input)="onNameChanged($event)" 
@@ -104,7 +104,8 @@ export class LibraryContainerComponent implements OnInit {
   }
 
   onHandleClicked() {
-
+    this.onAddArticle();
+    this.topicAdded = false;
   }
 
   onCategorySelect(event: any) {
@@ -116,7 +117,7 @@ export class LibraryContainerComponent implements OnInit {
     this.selectedTopic = event.target.value;
   }
 
-  onAddArticle(event: any) {
+  onAddArticle() {
     this.libraryService.addTopicArticle(this.selectedTopic, {name: this.name, url: this.url});
   }
 
@@ -131,10 +132,12 @@ export class LibraryContainerComponent implements OnInit {
   }
 
   onUrlChanged(event: any) {
+    console.log('url:', event.target.value)
     this.url = event.target.value;
   }
 
   onNameChanged(event: any) {
+    console.log('name', event.target.value)
     this.name = event.target.value;
   }
 

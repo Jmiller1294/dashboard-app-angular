@@ -6,17 +6,23 @@ import { catchError } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class NewsFeedService {
+  newsLoaded: boolean = false;
+  newsData:any = {};
 
   constructor(private http: HttpClient) {}
 
   fetchArticles() {
-    return this.http.get<{articles: []}>('https://newsapi.org/v2/top-headlines?country=us&apiKey='
+    if(!this.newsLoaded) {
+      this.newsData = this.http.get<{articles: []}>('https://newsapi.org/v2/top-headlines?country=us&apiKey='
       + '0176803c14204800ae658c2d02a9c37f'
-    ) 
-    .pipe(
-      map((val) => val.articles),
-      catchError(this.errorHandler)
-    )
+      ) 
+      .pipe(
+        map((val) => val.articles),
+        catchError(this.errorHandler)
+      )
+      this.newsLoaded = true;
+    }
+    return this.newsData;
   }
 
   errorHandler(error: HttpErrorResponse) {
