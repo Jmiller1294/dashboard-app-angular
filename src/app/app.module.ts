@@ -7,6 +7,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AppComponent } from './app.component';
 import { HomeContainerComponent } from './containers/home/home.container.component';
+import { CalenderContainerComponent } from './containers/calender/calender.container.component';
 import { HomePageComponent } from './public/pages/homepage/home.page.component';
 import { WidgetContainerComponent } from './containers/widget/widget.container.component.';
 import { SidebarComponent } from './components/features/sidebar/sidebar.component';
@@ -31,6 +32,7 @@ import { LibraryContainerComponent } from './containers/library/library.containe
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { ModalComponent } from './components/features/modal/modal.component';
+import { CalenderCardComponent } from './components/features/calender-card/calender.card.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -69,7 +71,9 @@ const appRoutes: Routes = [
     LibraryTopicComponent,
     LibraryContainerComponent,
     ModalComponent,
-    HomeContainerComponent
+    HomeContainerComponent,
+    CalenderContainerComponent,
+    CalenderCardComponent
   ],
   imports: [
     BrowserModule,

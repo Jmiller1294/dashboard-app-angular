@@ -1,5 +1,7 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { LibraryService } from '../../../services/library.service';
+import { topic } from 'src/app/models/topic.model';
+
 
 
 @Component({
@@ -11,14 +13,14 @@ import { LibraryService } from '../../../services/library.service';
         <library-topic 
           *ngFor="let topic of topics" 
           [topic]="topic"
-        >{{console.log(topic)}}</library-topic>
+        >{{console.log("topic", topic)}}</library-topic>
       </div>
     </div>
   `,
   styleUrls: ['./library.component.css']
 })
 export class LibraryCategoryComponent implements OnInit {  
-  topics: any;
+  topics: topic [];
   categoryType: string;
   console = console;
 

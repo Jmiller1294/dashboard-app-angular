@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SidebarImage } from 'src/app/models/sidebarImage.model';
 
-export const images = [
+export const sidebarImages = [
   {
     class: "home-icon",
     url: '../../../assets/icons8-home-grey.png',
@@ -41,8 +42,8 @@ export const images = [
 })
 
 export class SidebarComponent implements OnInit {
-images: any = images;
-imageUrl: any;
+images: SidebarImage[] = sidebarImages;
+imageUrl: String;
 hover: boolean = false;
 
   constructor() {}

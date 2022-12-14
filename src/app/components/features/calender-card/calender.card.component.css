@@ -1,0 +1,20 @@
+.calender-card-con-date {
+  display: flex;
+  flex-direction: column;
+  height: 110px;
+  width: 188.5px;
+  color: #FFFFFF;
+  border-right: 1px solid #212121;
+  border-top: 1px solid #212121;
+  padding: 3px;
+}
+
+.calender-card-con-day {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: #FFFFFF;
+  height: 30px;
+  width: 194.7px;
+}

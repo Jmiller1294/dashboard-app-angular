@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import WidgetsService from '../../../services/widgets.service';
 import { Stock } from 'src/app/models/stock.model';
-import { delay, map, Observable, shareReplay, Subject, Subscription, take, takeUntil, takeWhile } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'stock-widget',
@@ -29,7 +29,7 @@ import { delay, map, Observable, shareReplay, Subject, Subscription, take, takeU
 })
 export class StockWidgetComponent implements OnInit {
   titles = ['Symbol','Open','Price','High','Low','Change'];
-  stocks:Array<any> = [];
+  stocks:Array<Stock> = [];
   subscription: Subscription;
 
   constructor(private cdRef: ChangeDetectorRef, private widgetsService:WidgetsService) {
@@ -46,7 +46,7 @@ export class StockWidgetComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    //this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 
 }

@@ -1,8 +1,49 @@
 export interface Weather {
-  location: string,
-  temp: string,
-  weatherType: string,
-  humidity: string,
-  wind: object,
-  pressure: string
+  base: string;
+  clouds: {all: number};
+  cod: number;
+  coord: { lon: number; lat: number; };
+  dt: number;
+  id: number;
+  main: { 
+      temp: number; 
+      feels_like: number; 
+      temp_min: number; 
+      temp_max: number; 
+      pressure: number; 
+      humidity: number
+    };
+  name: string;
+  sys: { 
+    type: number;
+    id: number;
+    country: string;
+    sunrise: number;
+    sunset: number;
+  };
+  timezone: number;
+  visibility: number;
+  weather: [
+    {
+      id: number;
+      main: string;
+      description: string;
+      icon: string;
+    }
+  ];
+  wind: {
+    speed: number;
+    degree: number;
+  };
+}
+
+export interface WeatherData {
+  humidity: number;
+  location: string;
+  pressure: number;
+  temp: number;
+  tempHigh: number;
+  tempMin: number;
+  weatherType: string;
+  wind: string;
 }

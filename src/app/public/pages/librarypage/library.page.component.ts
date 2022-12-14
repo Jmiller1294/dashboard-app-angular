@@ -12,13 +12,8 @@ import { LibraryService } from '../../../services/library.service';
   `,
 })
 export class LibraryPageComponent {
-  categories: Array<any> = [];
-  topicAdded: boolean = false;
 
-  constructor(private cdRef: ChangeDetectorRef, 
-              private router: Router, 
-              public route: ActivatedRoute,
-              private libraryService: LibraryService) {}
+  constructor() {}
 
 
 

@@ -94,6 +94,7 @@ export class WidgetContainerComponent implements OnInit {
           .subscribe((val:any )=> {
             TechNewsComponentRef = this.widgetContainer.createComponent(TechNewsWidgetComponent);
             TechNewsComponentRef.instance.techNews = val;
+            console.log('tech news',val)
             this.cdRef.detectChanges();
         })
         break;

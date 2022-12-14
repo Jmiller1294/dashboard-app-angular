@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Weather } from "src/app/models/weather.model";
 import { catchError, combineLatest, delay, forkJoin, map, Observable, retry, shareReplay, take, throwError } from "rxjs";
+import { Stock } from "../models/stock.model";
 
 @Injectable({providedIn: 'root'})
 export default class WidgetsService {
@@ -12,7 +13,7 @@ export default class WidgetsService {
   stockNames:Array<string> = ['IBM','TSLA', 'MSFT', 'GME','NVDA'];
   stockData:Array<Observable<any>> = [];
   randomFactData: any;
-  weatherData:any = {};
+  weatherData: any = {};
   techNewsData:any = {}
   weatherLoaded: boolean = false;
   stocksLoaded: boolean = false;
@@ -23,11 +24,12 @@ export default class WidgetsService {
 
   fetchWeatherData() {
     if(!this.weatherLoaded) {
-      this.weatherData = this.http.get<any>(this.weatherUrl
+      this.weatherData = this.http.get<Weather>(this.weatherUrl
         + this.weatherApiKey
       )
       .pipe(
         map(val => {
+          console.log('fetched data', val)
           return Object.assign({}, {
             location: val.name,
             temp: val.main.temp,
@@ -50,7 +52,7 @@ export default class WidgetsService {
     if(!this.stocksLoaded) {
       this.stockNames.forEach(name => {  
         this.stockData.push(
-          this.http.get<{}>(
+          this.http.get<Stock>(
             'https://www.alphavantage.co/query?' +
             `function=GLOBAL_QUOTE&symbol=${name}&apikey=demo` +
             this.stockApiKey

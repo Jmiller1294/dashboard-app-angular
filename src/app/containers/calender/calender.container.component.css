@@ -1,0 +1,30 @@
+.calender-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100vh;
+  background: #121212;
+  font-weight: 500;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  opacity: 0.9;
+}
+
+.month {
+  width: 100%;
+  height: 50px;
+  margin-left: 10px;
+  color: #FFFFFF;
+}
+
+.day {
+  display: flex;
+  margin-left: auto;
+  margin-bottom: 5px;
+}
+
+.event {
+  background-color: blue;
+  font-size: 14px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}

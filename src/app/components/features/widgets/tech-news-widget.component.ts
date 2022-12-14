@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, NgZone, OnInit } from '@angular/core';
+import { techArticle } from 'src/app/models/techArticle.model';
 import WidgetsService from '../../../services/widgets.service';
 
 interface news {
@@ -11,13 +12,13 @@ interface news {
   template: 
   `
     <div class="tech-news-container">
-      <a [href]="this.techNews[this.articleNumber]?.url"
+      <a [href]="this.techNews[this.articleNumber].url"
         target="_blank" class="tech-news-link">
-        <h4>{{this.techNews[this.articleNumber]?.title}}</h4>
+        <h4>{{this.techNews[this.articleNumber].title}}</h4>
       </a>
       <br />
       <p class="tech-news-desc">
-        {{this.techNews[this.articleNumber]?.description}}
+        {{this.techNews[this.articleNumber].description}}
       </p>
     </div>
   `,
@@ -26,9 +27,8 @@ interface news {
 })
 export class TechNewsWidgetComponent implements OnInit {
   articleNumber:number = 0;
-  intervalId:any;
-  data: any;
-  @Input() techNews: Array<any> = [];
+  intervalId: any;
+  @Input() techNews: Array<techArticle> = [];
   
 
   constructor(private cdRef: ChangeDetectorRef, private widgetsService: WidgetsService) {}

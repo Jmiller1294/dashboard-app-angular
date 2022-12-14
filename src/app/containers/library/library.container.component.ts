@@ -1,5 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { category } from 'src/app/models/category.model';
+import { topic } from 'src/app/models/topic.model';
 import { LibraryService } from '../../services/library.service';
 
 
@@ -70,14 +72,15 @@ import { LibraryService } from '../../services/library.service';
   styleUrls: ['./library.component.css']
 })
 export class LibraryContainerComponent implements OnInit {
-  categories: Array<any> = [];
+  categories: Array<category> = [];
+  topics: Array<topic> = [];
   topicAdded: boolean = false;
   selectedTopic: string = 'Binary Tree';
   newTopic: string;
   name: string;
   url: string;
   selectedCategory: string = 'Data Structures';
-  topics: Array<any> = [];
+  
 
   constructor(private cdRef: ChangeDetectorRef, 
               private router: Router, 
@@ -87,6 +90,8 @@ export class LibraryContainerComponent implements OnInit {
   ngOnInit() {
     this.categories = this.libraryService.getCategories();
     this.topics = this.libraryService.getCategoryTopics(this.selectedCategory);
+    console.log(this.categories);
+    console.log(this.topics);
   }
 
   OnCardClick(categoryName: string) {

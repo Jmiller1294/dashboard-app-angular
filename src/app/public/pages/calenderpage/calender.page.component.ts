@@ -3,7 +3,9 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 @Component({
   selector: 'calender-page',
   template: `
-    <h1>calender</h1>
+    <div>
+      <calender-container></calender-container>
+    </div>
   `,
   styleUrls: ['./calender.page.component.css']
 })

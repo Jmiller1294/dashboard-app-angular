@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +8,6 @@ import { map, Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit{
   title = 'dashboard';
-  loadedArticles: Array<object> = [];
-  loadedWeatherData: any = {};
 
   constructor(private http: HttpClient, private cdRef: ChangeDetectorRef) {}
 

@@ -1,11 +1,8 @@
 import { 
-  AfterContentChecked, 
   AfterContentInit, 
   AfterViewChecked, 
   AfterViewInit, 
-  Component, 
-  DoCheck, 
-  Input, 
+  Component,  
   OnChanges, 
   OnDestroy, 
   OnInit, 
@@ -23,9 +20,7 @@ AfterContentInit,
 AfterViewInit,
 AfterViewChecked,
 OnDestroy {
-  @Input()
-  data: any;
-
+ 
   constructor() { 
     console.log('constructor called!');
   }

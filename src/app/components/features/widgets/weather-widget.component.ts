@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Weather } from 'src/app/models/weather.model';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, Output } from '@angular/core';
+import { WeatherData } from 'src/app/models/weather.model';
 import WidgetsService from '../../../services/widgets.service';
 
 export enum WeatherIcons {
@@ -21,18 +21,18 @@ export enum WeatherIcons {
   template: `
     <div class="weather-container">
       <div class="row cen">
-        <h3>{{weatherData?.location}}</h3>
+        <h3>{{weatherData.location}}</h3>
       </div>
       <div class="row">
         <div class="column">
           <div class="con-3">
-            <img class="weather-icon" [src]="getWeatherImage(weatherData?.weatherType)" />
-            <h4>{{weatherData?.weatherType}}</h4>
+            <img class="weather-icon" [src]="getWeatherImage(weatherData.weatherType)" />
+            <h4>{{weatherData.weatherType}}</h4>
           </div>
         </div>
         <div class="column">
           <div class="con-2">
-            <span class="weather-temp">{{convertTemp(weatherData?.temp)}}&#176;C</span>
+            <span class="weather-temp">{{convertTemp(weatherData.temp)}}&#176;C</span>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@ export enum WeatherIcons {
               <img class="wind-icon"[src]="icons.wind" />
             </div>
             <div class="column sdd">
-              Wind &nbsp; &nbsp; &nbsp; {{weatherData?.wind}} km/h
+              Wind &nbsp; &nbsp; &nbsp; {{weatherData.wind}} km/h
             </div>
           </div>
           <div class="row marg">
@@ -52,7 +52,7 @@ export enum WeatherIcons {
               <img class="wind-icon"[src]="icons.pressure" />
             </div>
             <div class="column sdd">
-              Pressure {{weatherData?.pressure}} mbar
+              Pressure {{weatherData.pressure}} mbar
             </div>
           </div>
         </div>
@@ -62,8 +62,8 @@ export enum WeatherIcons {
               <img class="wind-icon"[src]="icons.rainSmall" />
             </div>
             <div class="column sdd">
-              Low / High {{convertTemp(weatherData?.tempMin)}} 
-              &#176;C / {{convertTemp(weatherData?.tempHigh)}}&#176;C
+              Low / High {{convertTemp(weatherData.tempMin)}} 
+              &#176;C / {{convertTemp(weatherData.tempHigh)}}&#176;C
             </div>
           </div>
           <div class="row marg">
@@ -71,7 +71,7 @@ export enum WeatherIcons {
               <img class="wind-icon"[src]="icons.humidity" />
             </div>
             <div class="column sdd">
-              Humidity {{weatherData?.humidity}}%
+              Humidity {{weatherData.humidity}}%
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ export enum WeatherIcons {
 })
 export class WeatherWidgetComponent implements OnInit {
   d: string = "hello";
-  @Input() weatherData: any = {};
+  @Input() weatherData: WeatherData;
   icons = WeatherIcons;
 
   constructor(private widgetsService: WidgetsService, private cdRef: ChangeDetectorRef) { }
@@ -95,7 +95,7 @@ export class WeatherWidgetComponent implements OnInit {
     //     this.cdRef.detectChanges()
     //     console.log(this.weatherData);
     //   })
-    console.log(this.weatherData);
+    console.log('weather data: ', this.weatherData);
       
   }
 
