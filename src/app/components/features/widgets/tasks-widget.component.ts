@@ -1,5 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import WidgetsService from 'src/app/services/widgets.service';
+import { Todo } from 'src/app/models/todo.model';
 
 @Component({
   selector: 'tasks-widget',
@@ -12,15 +14,16 @@ import { FormArray, FormControl, FormGroup } from '@angular/forms';
             formControlName="tasks-input">
           </textarea>
           <div formArrayName="tasks" 
-            class="tasks-list" 
-            *ngFor="let taskControl of tasksArrayControl; let i = index"
-            >
+            class="tasks-list"
+          >
+            <div *ngFor="let taskControl of tasksArrayControl; let i = index">
               <input 
-                  type="checkbox" 
-                  id="task" 
-                  (input)="checkValue()"
-                  [formControlName]="i">
-              <label class="tasks-name">{{tasks[i]}}</label>
+                type="checkbox" 
+                class="checkbox"
+                (change)="checkValues()"
+                [formControlName]="i">
+                <label class="tasks-name" for="">{{tasks[i]?.text}}</label>
+            </div>
           </div>
         </form>
     </div>
@@ -29,17 +32,20 @@ import { FormArray, FormControl, FormGroup } from '@angular/forms';
 })
 export class TasksWidgetComponent implements OnInit {
   tasksForm: FormGroup;
-  tasks:Array<string> = [];
+  tasks:Array<Todo> = [];
   console = console;
-  constructor(private cdRef: ChangeDetectorRef) { }
+  isChecked = true;
+
+  constructor(private cdRef: ChangeDetectorRef, private widgetsService: WidgetsService) { }
 
   ngOnInit(): void {
+    this.console.log("init")
     this.tasksForm = new FormGroup({
-      'tasks-input': new FormControl(null),
+      'tasks-input': new FormControl(null, [Validators.required, Validators.minLength(5)]),
       'tasks': new FormArray([])
     });
     this.tasks.map((task: any) => {
-      const control = new FormControl(false);
+      const control = new FormControl(task);
       (<FormArray>this.tasksForm.get('tasks')).push(control);
     })
     this.cdRef.detectChanges();
@@ -54,18 +60,27 @@ export class TasksWidgetComponent implements OnInit {
     tasks.map((task: any) => {
       const control = new FormControl(false);
       (<FormArray>this.tasksForm.get('tasks')).push(control);
-    })
+    });
     this.tasksForm.get('tasks-input')?.setValue(null);
-    this.tasks = this.tasks.concat(tasks)
-    this.console.log(this.tasks)
+    this.widgetsService.addTodo(tasks);
   }
 
-  checkValue() {
-    this.console.log((this.tasksForm?.get('tasks') as FormArray).controls);
-    const arr = this.tasksArrayControl.filter(task => {
-      return task.value === false;
+  checkValues() {
+    //remove tasks that are not checked
+    (<FormArray>this.tasksForm.get('tasks')).value.map( (val: boolean, index: number) => {
+      if(val === true) {
+        this.tasks.splice(index, 1);
+      }
+    })
+
+    //clear tasks form array
+    (<FormArray>this.tasksForm.get('tasks')).clear();
+
+    //create form controls for tasks array
+    this.tasks.map((task: any) => {
+      const control = new FormControl(false);
+      (<FormArray>this.tasksForm.get('tasks')).push(control);
     });
-    this.tasksForm.get('tasks')?.setValue(arr);
-    this.console.log(this.tasksForm);
+    this.console.log('tasks form', this.tasksForm);
   }
 }

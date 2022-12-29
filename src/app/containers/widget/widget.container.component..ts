@@ -32,7 +32,6 @@ export class WidgetContainerComponent implements OnInit {
   stockDataSubscription: Subscription;
   classType: string;
   dat: any;
-  tasks:Array<string> = ['sdfsdfsdf','sdfsdfsdf','gdfgfgfg'];
   loaded: boolean = false;
   
   constructor(private cdRef: ChangeDetectorRef, private widgetsService: WidgetsService) { }
@@ -55,8 +54,12 @@ export class WidgetContainerComponent implements OnInit {
     switch(type) {
       case 'tasks':
         let TasksComponentRef: ComponentRef<TasksWidgetComponent>;
-        TasksComponentRef = this.widgetContainer.createComponent(TasksWidgetComponent);
-        TasksComponentRef.instance.tasks = this.tasks;
+        this.stockDataSubscription = this.widgetsService.fetchTodoData() 
+          .subscribe((val: any) => {
+            TasksComponentRef = this.widgetContainer.createComponent(TasksWidgetComponent);
+            TasksComponentRef.instance.tasks = val;
+            this.cdRef.detectChanges();
+          })
         break;
       case 'news':
         let NewsComponentRef: ComponentRef<NewsWidgetComponent>;
@@ -68,35 +71,37 @@ export class WidgetContainerComponent implements OnInit {
         break;
       case 'weather':
         let WeatherComponentRef: ComponentRef<WeatherWidgetComponent>;
-        this.weatherDataSubscription = this.widgetsService.fetchWeatherData()
-          .subscribe((val: any ) => {
-            WeatherComponentRef = this.widgetContainer.createComponent(WeatherWidgetComponent);
-            WeatherComponentRef.instance.weatherData = val;
-            this.cdRef.detectChanges();
-          })
+        // this.weatherDataSubscription = this.widgetsService.fetchWeatherData()
+        //   .subscribe((val: any ) => {
+        //     WeatherComponentRef = this.widgetContainer.createComponent(WeatherWidgetComponent);
+        //     WeatherComponentRef.instance.weatherData = val;
+        //     this.cdRef.detectChanges();
+        //   }, (error: any) => {
+        //     console.log(error);
+        //   })
         break;
       case 'stocks':
         let StockComponentRef: ComponentRef<StockWidgetComponent>;
-        this.stockDataSubscription = this.widgetsService.fetchStockData() 
-          .subscribe(val => {
-            StockComponentRef = this.widgetContainer.createComponent(StockWidgetComponent);
-            StockComponentRef.instance.stocks = val;
-            this.cdRef.detectChanges();
-          })
+        // this.stockDataSubscription = this.widgetsService.fetchStockData() 
+        //   .subscribe(val => {
+        //     StockComponentRef = this.widgetContainer.createComponent(StockWidgetComponent);
+        //     StockComponentRef.instance.stocks = val;
+        //     this.cdRef.detectChanges();
+        //   })
         break;
       case 'facts':
         let FactsComponentRef: ComponentRef<RandomFactWidgetComponent>;
         FactsComponentRef = this.widgetContainer.createComponent(RandomFactWidgetComponent);
         break;
       case 'tech':
-        let TechNewsComponentRef: ComponentRef<TechNewsWidgetComponent>;
-        this.widgetsService.fetchTechNewsData()
-          .subscribe((val:any )=> {
-            TechNewsComponentRef = this.widgetContainer.createComponent(TechNewsWidgetComponent);
-            TechNewsComponentRef.instance.techNews = val;
-            console.log('tech news',val)
-            this.cdRef.detectChanges();
-        })
+        // let TechNewsComponentRef: ComponentRef<TechNewsWidgetComponent>;
+        // this.widgetsService.fetchTechNewsData()
+        //   .subscribe((val:any )=> {
+        //     TechNewsComponentRef = this.widgetContainer.createComponent(TechNewsWidgetComponent);
+        //     TechNewsComponentRef.instance.techNews = val;
+        //     console.log('tech news',val)
+        //     this.cdRef.detectChanges();
+        // })
         break;
       default:
         let CustomComponentRef: ComponentRef<CustomWidgetComponent>;

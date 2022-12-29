@@ -158,6 +158,8 @@ tbody {
 }
 
 .tasks-list {
+  display: flex;
+  flex-direction: column;
   height: auto;
   word-wrap: break-word;
   margin: 14px 0;
@@ -339,6 +341,11 @@ tbody {
 
 .form-inputs {
   background-color: #FFFFFF;
+}
+
+.checkbox {
+  height: 15px;
+  width: 15px;
 }
 
 

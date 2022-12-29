@@ -1,13 +1,15 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Weather } from "src/app/models/weather.model";
-import { catchError, combineLatest, delay, forkJoin, map, Observable, retry, shareReplay, take, throwError } from "rxjs";
+import { catchError,forkJoin, from, map, Observable, of, shareReplay,throwError } from "rxjs";
 import { Stock } from "../models/stock.model";
+import { Todo } from '../models/todo.model';
 
 @Injectable({providedIn: 'root'})
 export default class WidgetsService {
   weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=40.776676&lon=-73.971321&appid=';
   stockUrl = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo';
+  todoUrl = 'http://localhost:8000/v1/todos'
   weatherApiKey = '3a3d701928322f6c8b5ad5d274165ef3';
   stockApiKey = 'ARY3R9NDMNDTS247';
   stockNames:Array<string> = ['IBM','TSLA', 'MSFT', 'GME','NVDA'];
@@ -19,8 +21,34 @@ export default class WidgetsService {
   stocksLoaded: boolean = false;
   techNewsLoaded: boolean = false;
   randomFactDataLoaded: boolean = false;
+  todoDataLoaded: boolean = false;
+  data: Observable<Todo[]>;
   
   constructor(private http: HttpClient) {}
+
+  fetchTodoData() {
+    if(!this.todoDataLoaded) {
+      this.data = this.http.get<[Todo]>(this.todoUrl)
+      .pipe(
+        map(val => {
+          console.log('fetched data', val)
+          return val
+        }),
+        shareReplay(1)
+      )
+      this.todoDataLoaded = true;
+    }
+    return this.data;
+  }
+
+  addTodo(newTodo: {text: string}) {
+    console.log(newTodo);
+    this.http.post<Todo>(this.todoUrl, {text: newTodo}).subscribe(data => {
+      console.log(data);
+    })
+  }
+
+
 
   fetchWeatherData() {
     if(!this.weatherLoaded) {
